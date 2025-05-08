@@ -1,5 +1,162 @@
+/* --- Reset Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: sans-serif; /* Usa una fuente genérica por ahora */
-    margin: 0; /* Quita márgenes por defecto */
-    padding: 0; /* Quita paddings por defecto */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    background-color: #FFFFFF; /* Fondo blanco para el cuerpo */
+    color: #333333;     /* Texto principal oscuro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    color: #1E73BE; /* Azul principal para enlaces en el cuerpo */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #50C9F2; /* Azul claro para hover de enlaces en el cuerpo */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.75em;
+    color: #1E73BE; /* Azul principal para cabeceras en el cuerpo */
+    font-weight: 600;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* --- Header --- */
+header {
+    background-color: rgb(38, 49, 120);
+    padding: 15px 0; /* Ajusta el padding si es necesario */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra un poco más pronunciada */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-img {
+    max-height: 65px; /* Aumentamos un poco, ajusta según tu nuevo logo */
+    width: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin-left: 35px;
+}
+
+header nav ul li a {
+    color: #FFFFFF; /* Texto del menú blanco */
+    font-weight: bold; /* Más peso para destacar sobre el degradado */
+    font-size: 1.1em;
+    padding-bottom: 8px;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra de texto sutil */
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFD700; /* Línea de hover con el color de acento amarillo */
+    transition: width 0.3s ease-in-out;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    color: #FFF; /* Mantenemos blanco, el subrayado hace el efecto */
+}
+
+
+/* --- Main Content Area --- */
+main {
+    flex-grow: 1;
+    padding: 40px 0;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: rgb(38, 49, 120);
+    color: #FFFFFF;     /* Texto blanco en el footer */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra superior */
+}
+
+footer .social-media {
+    margin-bottom: 25px;
+}
+
+footer .social-media a {
+    display: inline-block;
+    margin: 0 12px;
+    transition: transform 0.2s ease-in-out;
+}
+
+footer .social-media img {
+    height: 35px; /* Iconos sociales un poco más grandes */
+    width: 35px;
+}
+
+footer .social-media a:hover {
+    transform: scale(1.2); /* Efecto de hover más pronunciado */
+}
+
+footer .legal-links {
+    margin-bottom: 20px;
+}
+
+footer .legal-links a {
+    color: #BBE5FF; /* Un azul muy clarito para los enlaces legales */
+    font-size: 0.95em;
+    margin: 0 10px;
+}
+
+footer .legal-links a:hover {
+    color: #FFD700; /* Amarillo de acento al pasar el ratón */
+    text-decoration: underline;
+}
+
+footer .copyright {
+    font-size: 0.9em;
+    color: #A8D8F0; /* Un azul claro para el copyright */
+    margin-top: 20px;
 }

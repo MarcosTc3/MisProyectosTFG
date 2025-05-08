@@ -6,6 +6,57 @@
     <title>Inicio - Jutosa Web (TFG Marcos)</title> </head>
     <link rel="stylesheet" href="css/style.css">
 <body>
-    <h1>Página cambios laptop Inicio</h1>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/NuevoLogoJutosa.png" alt="Logo Aluminios Jutosa" id="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="productos-servicios.html">Productos y Servicios</a></li>
+                    <li><a href="nuestros-trabajos.html">Nuestros Trabajos</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Bienvenido a la Nueva Web de Jutosa</h1>
+            <p>Esta es la página de inicio. Próximamente con más contenido.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-media">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa">
+                        <img src="img/LogoInstagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa">
+                        <img src="img/LogoFacebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa">
+                        <img src="img/LogoTiktok.png" alt="TikTok">
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa">
+                        <img src="img/LogoLinkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+                <p class="copyright">&copy; <span id="current-year"></span> Jutosa TFG - Marcos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Pequeño script para actualizar el año del copyright automáticamente
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
