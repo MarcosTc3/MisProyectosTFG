@@ -13,14 +13,18 @@
                     <img src="img/NuevoLogoJutosa.png" alt="Logo Aluminios Jutosa" id="logo-img">
                 </a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a href="productos-servicios.html">Productos y Servicios</a></li>
-                    <li><a href="nuestros-trabajos.html">Nuestros Trabajos</a></li>
-                    <li><a href="calculadora.html">Calculadora</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+            <nav id="main-nav"> <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <ul id="menu-list">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
+                    <li><a href="productos-servicios.html" class="nav-link">Productos y Servicios</a></li>
+                    <li><a href="nuestros-trabajos.html" class="nav-link">Nuestros Trabajos</a></li>
+                    <li><a href="calculadora.html" class="nav-link">Calculadora</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -54,6 +58,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
     <script>
         // Pequeño script para actualizar el año del copyright automáticamente
         document.getElementById("current-year").textContent = new Date().getFullYear();

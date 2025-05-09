@@ -1,0 +1,216 @@
+/* css/quienes-somos.css - Estilos para la página "Quiénes Somos" */
+
+/* Título principal de la página */
+.page-title-section h1 {
+    text-align: center;
+    color: #1E73BE; /* Azul principal */
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Un poco más grande */
+}
+
+/* Estilos para las secciones generales de contenido */
+.quienes-somos-intro h2,
+.mision-vision h3,
+.nuestros-valores h2,
+.nuestro-equipo h2,
+.nuestros-servicios-qs h2,
+.donde-estamos-parla h2, /* Añadido */
+.progreso-empresa h2,
+.llamada-accion-qs h2 {
+    color: #1E73BE; /* Azul principal */
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.quienes-somos-intro p, 
+.mision-vision p, 
+.nuestros-valores li, 
+.nuestro-equipo p, 
+.nuestros-servicios-qs p,
+.donde-estamos-parla p, /* Añadido */
+.progreso-empresa > p:first-of-type, /* Para el párrafo introductorio de la sección progreso */
+.llamada-accion-qs p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Sección Misión y Visión (sin cambios respecto a la anterior propuesta) */
+.mision-vision {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.mision, .vision {
+    flex: 1;
+    min-width: 280px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #50C9F2;
+}
+.mision h3, .vision h3 {
+    margin-top: 0;
+    color: #1E73BE;
+}
+
+/* Nuestros Valores (sin cambios respecto a la anterior propuesta) */
+.nuestros-valores ul {
+    list-style: none;
+    padding-left: 0;
+}
+.nuestros-valores li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 12px;
+}
+.nuestros-valores li::before {
+    content: '✔';
+    color: #1E73BE;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Nuestro Equipo (sin cambios respecto a la anterior propuesta) */
+.nuestro-equipo .equipo-contenido {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.nuestro-equipo .equipo-texto {
+    flex: 2;
+    min-width: 280px;
+}
+.nuestro-equipo .equipo-foto {
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+}
+.nuestro-equipo .equipo-foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.nuestro-equipo .equipo-foto .caption {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Sección Dónde Estamos en Parla (NUEVA) */
+.donde-estamos-parla {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #eef7ff; /* Un azul muy claro */
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-bottom: 30px; /* Ajustado margen inferior */
+}
+.donde-estamos-parla h2 {
+    margin-top: 0; /* Ya tiene margen superior por la regla general */
+}
+.donde-estamos-parla p a { /* Estilo específico para el enlace a Contacto */
+    font-weight: bold;
+    color: #155a9b; 
+    text-decoration: underline;
+}
+.donde-estamos-parla p a:hover {
+    color: #50C9F2;
+}
+
+
+/* Estilos para la sección de progreso de la empresa (MODIFICADA para 4 imágenes) */
+.progreso-empresa h2 {
+    text-align: center; /* Asegurar centrado */
+}
+.progreso-empresa > p:first-of-type { /* Párrafo introductorio debajo del H2 */
+    text-align: center;
+    margin-bottom: 25px; /* Espacio antes de las fotos */
+    color: #555;
+    font-size: 1.05em; /* Ligeramente más grande */
+}
+
+.fotos-progreso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Columnas responsivas, mínimo 260px */
+    gap: 20px; /* Espacio entre las tarjetas de foto */
+    margin-top: 20px;
+}
+
+.foto-evolucion { /* Estilo para cada una de las 4 tarjetas de evolución */
+    text-align: center;
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0; /* Borde más sutil */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Sombra suave */
+    display: flex; /* Para mejor control interno del contenido */
+    flex-direction: column;
+    justify-content: space-between; /* Para distribuir el espacio si las descripciones varían */
+}
+
+.foto-evolucion img {
+    width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
+    max-width: 100%; /* No necesita max-width específico aquí si la tarjeta ya tiene control */
+    height: 200px; /* Altura fija para las imágenes para uniformidad, ajustar según fotos */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.foto-evolucion p { /* Estilo para los pies de foto dentro de .foto-evolucion */
+    font-style: normal; /* No necesariamente itálica si es descriptiva */
+    color: #333; /* Color de texto más oscuro */
+    font-size: 0.9em;
+    margin-top: auto; /* Empuja el texto hacia abajo si la imagen es más corta */
+    padding-top: 10px; /* Espacio sobre el texto */
+}
+
+/* Sección de Llamada a la Acción (sin cambios respecto a la anterior propuesta) */
+.llamada-accion-qs {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4faff;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+.llamada-accion-qs h2 {
+    margin-top: 0;
+}
+.botones-accion {
+    margin-top: 20px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.btn-primario {
+    background-color: #1E73BE;
+    color: #FFFFFF;
+}
+.btn-primario:hover {
+    background-color: #155a9b;
+    color: #FFFFFF;
+}
+.btn-secundario {
+    background-color: transparent;
+    color: #1E73BE;
+    border-color: #1E73BE;
+}
+.btn-secundario:hover {
+    background-color: #1E73BE;
+    color: #FFFFFF;
+}

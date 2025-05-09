@@ -46,7 +46,7 @@ img {
 
 /* --- Header --- */
 header {
-    background-color: rgb(38, 49, 120);
+    background-color: rgb(38, 49, 120); /* MANTENIDO: Tu color de fondo original */
     padding: 15px 0; /* Ajusta el padding si es necesario */
     box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra un poco más pronunciada */
     position: sticky;
@@ -61,48 +61,195 @@ header .container {
 }
 
 #logo-img {
-    max-height: 65px; /* Aumentamos un poco, ajusta según tu nuevo logo */
+    max-height: 65px; /* MANTENIDO: Tus estilos originales sin borde */
     width: auto;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
+/* --- Responsive Navigation / Hamburger Menu --- */
+/* Estilos para el contenedor nav (si has añadido el ID 'main-nav' a tu etiqueta <nav> en el HTML) */
+nav#main-nav {
+    position: relative; 
 }
 
-header nav ul li {
-    margin-left: 35px;
+/* Botón Hamburguesa (oculto en escritorio, visible en móvil) */
+.hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    z-index: 1001; 
 }
 
-header nav ul li a {
-    color: #FFFFFF; /* Texto del menú blanco */
-    font-weight: bold; /* Más peso para destacar sobre el degradado */
-    font-size: 1.1em;
-    padding-bottom: 8px;
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
     position: relative;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Sombra de texto sutil */
 }
 
-header nav ul li a::after {
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF; /* Color de las líneas de la hamburguesa */
+    border-radius: 3px;
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -1.5px; 
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: '';
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px; 
+}
+
+.hamburger-inner::after {
+    bottom: -10px; 
+}
+
+/* Animación de la hamburguesa a "X" */
+.hamburger.is-active .hamburger-inner {
+    transform: rotate(45deg);
+}
+.hamburger.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+}
+.hamburger.is-active .hamburger-inner::after {
+    opacity: 0;
+}
+
+/* Estilos de Navegación para ESCRITORIO (adaptados de tus estilos originales) */
+/* Reemplaza tus anteriores 'header nav ul', 'header nav ul li', etc. con estos: */
+nav#main-nav ul#menu-list { /* Usa el ID que pusiste en tu <ul> en el HTML */
+    list-style: none;
+    display: flex; 
+    align-items: center;
+    margin: 0; 
+    padding: 0; 
+}
+
+nav#main-nav ul#menu-list li {
+    margin-left: 35px; /* Mantiene tu espaciado original */
+}
+
+nav#main-nav ul#menu-list li a.nav-link { /* Usa la clase que pusiste en tus <a> del menú en el HTML */
+    color: #FFFFFF; 
+    font-weight: bold; 
+    font-size: 1.1em; /* Mantiene tu tamaño de fuente original */
+    padding-bottom: 8px; 
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
+    text-decoration: none;
+    display: inline-block; 
+}
+
+nav#main-nav ul#menu-list li a.nav-link::after {
     content: '';
     position: absolute;
-    width: 0;
+    width: 0; /* Inicialmente oculta */
     height: 2.5px;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #FFD700; /* Línea de hover con el color de acento amarillo */
+    background-color: #FFD700; /* Tu color de línea amarillo */
     transition: width 0.3s ease-in-out;
 }
 
-header nav ul li a:hover::after,
-header nav ul li a.active::after {
+/* Tus estilos originales para hover y active en escritorio */
+nav#main-nav ul#menu-list li a.nav-link:hover::after,
+nav#main-nav ul#menu-list li a.nav-link.active::after {
     width: 100%;
 }
 
-header nav ul li a:hover {
-    color: #FFF; /* Mantenemos blanco, el subrayado hace el efecto */
+nav#main-nav ul#menu-list li a.nav-link:hover {
+    color: #FFF; 
+}
+
+nav#main-nav ul#menu-list li a.nav-link.active {
+    color: #FFD700; /* Tu color para el enlace activo */
+}
+/* El estilo para a.nav-link.active::after ya está cubierto por la regla combinada de arriba */
+
+
+/* Media Query para estilos de Navegación en MÓVIL */
+@media (max-width: 768px) {
+    .hamburger {
+        display: inline-block;
+    }
+
+    nav#main-nav ul#menu-list {
+        display: none; 
+        flex-direction: column;
+        /* Cambios para mejor superposición y apariencia */
+        position: fixed; /* Cambiado de absolute a fixed */
+        top: 0; /* Empieza desde la parte superior de la ventana gráfica */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho de la ventana */
+        height: 100vh; /* Ocupa toda la altura de la ventana */
+        background-color: rgb(38, 49, 120); /* Tu color de fondo original */
+        padding-top: 80px; /* Espacio para no solaparse con el header si el header fuera visible encima, o para dar espacio arriba */
+        box-sizing: border-box; /* Para que el padding no aumente el tamaño total */
+        overflow-y: auto; /* Permite scroll si hay muchos elementos */
+        z-index: 999; /* Justo debajo del botón hamburguesa si este tiene z-index mayor */
+    }
+
+    /* Asegúrate que el botón hamburguesa esté por encima del menú desplegado */
+    .hamburger {
+        position: relative; /* O fixed si es necesario, dependiendo de la estructura del header */
+        z-index: 1001; /* Mayor que el z-index del menú desplegado */
+    }
+    /* Si el botón hamburguesa se queda detrás, puedes necesitar ajustar su posición o la del logo */
+    header .container {
+        position: relative; /* Para que el z-index de los hijos funcione bien en el flujo */
+    }
+
+
+    nav#main-nav ul#menu-list.is-active {
+        display: flex;
+    }
+
+    nav#main-nav ul#menu-list li {
+        margin-left: 0;
+        width: 100%;
+        text-align: left; /* Alineado a la izquierda para mejor lectura */
+    }
+
+    nav#main-nav ul#menu-list li a.nav-link {
+        display: block;
+        padding: 18px 30px; /* Más padding para mejor toque y apariencia */
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        color: #FFFFFF;
+        font-size: 1.1em; /* Un poco más grande para móvil */
+    }
+
+    nav#main-nav ul#menu-list li:last-child a.nav-link {
+        border-bottom: none;
+    }
+
+    nav#main-nav ul#menu-list li a.nav-link::after {
+        display: none;
+    }
+
+    nav#main-nav ul#menu-list li a.nav-link.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #FFD700;
+    }
 }
 
 
@@ -114,7 +261,7 @@ main {
 
 /* --- Footer --- */
 footer {
-    background-color: rgb(38, 49, 120);
+    background-color: rgb(38, 49, 120); /* MANTENIDO: Tu color de fondo original */
     color: #FFFFFF;     /* Texto blanco en el footer */
     padding: 40px 0;
     text-align: center;
@@ -132,7 +279,7 @@ footer .social-media a {
 }
 
 footer .social-media img {
-    height: 35px; /* Iconos sociales un poco más grandes */
+    height: 35px; /* MANTENIDO: Tus estilos originales sin borde */
     width: 35px;
 }
 
@@ -159,4 +306,33 @@ footer .copyright {
     font-size: 0.9em;
     color: #A8D8F0; /* Un azul claro para el copyright */
     margin-top: 20px;
+}
+
+/* Estas son las Media Queries que tenías al final de tu archivo original. */
+/* Las mantengo tal cual, asumiendo que son para estilos globales o clases que usas en varias páginas. */
+/* Si son muy específicas de 'quienes-somos.html', considera moverlas a 'quienes-somos.css'. */
+
+/* En css/quienes-somos.css o style.css */ /* Comentario original tuyo */
+/* Estilos base (para móviles primero, o para escritorio) */ /* Comentario original tuyo */
+/* ... tus estilos actuales ... */ /* Comentario original tuyo, lo comento si no hay nada debajo que sea "actual" antes de la MQ */
+
+/* Ajustes para pantallas más pequeñas, por ejemplo, menos de 768px */
+@media (max-width: 768px) {
+    .page-title-section h1 { /* Esta clase es muy específica, asegúrate de su ámbito */
+        font-size: 2em; 
+    }
+
+    .mision-vision { /* Esta clase también es específica */
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    /* Otros ajustes que puedas necesitar */ /* Comentario original tuyo */
+}
+
+@media (max-width: 480px) {
+    .botones-accion .btn { /* Esta clase también es específica */
+        padding: 10px 15px; 
+        font-size: 0.9em;
+    }
 }
