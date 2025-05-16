@@ -1,0 +1,313 @@
+/* css/contacto.css */
+
+/* Contenedor principal de la página de contacto */
+.contact-page-container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Sección del título de la página */
+.contact-page-container .page-title-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-page-container .page-title-section h1 {
+    font-size: 2.8em;
+    color: #1E73BE;
+    margin-bottom: 15px;
+}
+
+.contact-page-container .intro-text {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+}
+
+/* Estilo común para los títulos de sección (h2) */
+.contact-details h2,
+.contact-form-section h2 {
+    color: #1E73BE;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Sección de Detalles de Contacto y Ubicaciones */
+.contact-details {
+    margin-bottom: 50px;
+}
+
+.location-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.location-card {
+    flex: 1;
+    min-width: 320px;
+    max-width: 520px;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 5px solid #50C9F2;
+}
+
+.location-card h3 {
+    color: #1E73BE;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+}
+
+.location-card h3 .icon {
+    margin-right: 12px;
+    font-size: 1.3em;
+}
+
+.location-card p {
+    margin-bottom: 12px;
+    line-height: 1.65;
+    color: #333;
+}
+.location-card p strong {
+    color: #111;
+}
+.location-card a {
+    color: #1E73BE;
+    font-weight: 500;
+}
+.location-card a:hover {
+    text-decoration: underline;
+    color: #50C9F2;
+}
+
+.map-placeholder {
+    width: 100%;
+    min-height: 280px;
+    background-color: #e9e9e9;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    color: #777;
+    font-style: italic;
+    border: 1px dashed #ccc;
+    overflow: hidden;
+}
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 280px; /* Para asegurar altura mínima del mapa */
+    border: 0;
+}
+
+
+/* Sección del Formulario de Contacto */
+.contact-form-section {
+    margin-bottom: 40px;
+}
+
+.contact-form-section form {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #fdfdfd;
+    padding: 30px 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e7e7e7;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    font-size: 0.95em;
+}
+.form-group label .required {
+    color: #d9534f;
+    margin-left: 3px;
+    font-weight: normal;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #1E73BE;
+    box-shadow: 0 0 0 0.2rem rgba(30, 115, 190, 0.2);
+    outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%208l5%205%205-5z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1em;
+    padding-right: 40px;
+    cursor: pointer;
+}
+.form-group select::-ms-expand {
+    display: none;
+}
+
+/* Estilos para el checkbox de política de privacidad */
+.privacy-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+.privacy-check input[type="checkbox"] {
+    width: auto;
+    margin-top: 3px;
+    accent-color: #1E73BE;
+    cursor: pointer;
+}
+.privacy-check .privacy-label {
+    font-weight: normal;
+    margin-bottom: 0;
+    color: #555;
+    line-height: 1.5;
+}
+.privacy-check .privacy-label a {
+    color: #1E73BE;
+    text-decoration: underline;
+}
+.privacy-check .privacy-label a:hover {
+    color: #50C9F2;
+}
+
+/* Botón de envío del formulario */
+.contact-form-section .btn.btn-primario {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.15em;
+    font-weight: bold;
+    background-color: #1E73BE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+.contact-form-section .btn.btn-primario:hover {
+    background-color: #155a9b;
+    transform: translateY(-2px);
+}
+
+/* Media Query para mejorar la disposición en móviles */
+@media (max-width: 768px) {
+    .contact-page-container .page-title-section h1 {
+        font-size: 2.2em;
+    }
+    .contact-page-container .intro-text {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .location-columns {
+        gap: 25px;
+    }
+    .location-card {
+        min-width: 100%;
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    .location-card h3 {
+        font-size: 1.4em;
+    }
+    .map-placeholder {
+        min-height: 220px;
+    }
+    .map-placeholder iframe {
+        min-height: 220px;
+    }
+
+    .contact-form-section form {
+        padding: 20px 25px;
+    }
+    .contact-form-section .btn.btn-primario {
+        padding: 12px 18px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page-container .page-title-section h1 {
+        font-size: 1.9em;
+    }
+    .location-card {
+        padding: 15px;
+    }
+    .location-card h3 {
+        font-size: 1.3em;
+    }
+    .location-card p {
+        font-size: 0.95em;
+    }
+
+    .contact-form-section form {
+        padding: 20px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+    .contact-form-section .btn.btn-primario {
+        padding: 12px;
+        font-size: 1em;
+    }
+}

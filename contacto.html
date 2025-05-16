@@ -3,60 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Jutosa Web (TFG Marcos)</title> </head>
+    <title>Contacto - Aluminios Jutosa</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/NuevoLogoJutosa.png" alt="Logo Aluminios Jutosa" id="logo-img">
-                </a>
-            </div>
-            <nav id="main-nav"> <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
+            <div class="logo"><a href="index.html"><img src="img/NuevoLogoJutosa.png" alt="Logo Aluminios Jutosa" id="logo-img"></a></div>
+            <nav id="main-nav">
+                <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
                 <ul id="menu-list">
                     <li><a href="index.html" class="nav-link">Inicio</a></li>
                     <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
                     <li><a href="productos-servicios.html" class="nav-link">Productos y Servicios</a></li>
                     <li><a href="nuestros-trabajos.html" class="nav-link">Nuestros Trabajos</a></li>
                     <li><a href="calculadora.html" class="nav-link">Calculadora</a></li>
-                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
-                </ul>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li> </ul>
             </nav>
         </div>
     </header>
 
-    <h1>Contacto</h1>
+    <main>
+        <div class="container contact-page-container">
+            <section class="page-title-section">
+                <h1>Ponte en Contacto</h1>
+                <p class="intro-text">Estamos aquí para ayudarte con tus proyectos de carpintería de aluminio y PVC, reparaciones o cualquier consulta que tengas. No dudes en visitarnos, llamarnos o enviarnos un mensaje a través del formulario.</p>
+            </section>
+
+            <section class="contact-details">
+                <h2>Nuestras Ubicaciones en Parla</h2>
+                <div class="location-columns">
+                    <div class="location-card" id="tienda">
+                        <h3><span class="icon">🛍️</span> Tienda y Exposición</h3>
+                        <p><strong>Dirección:</strong> C/ Mª Cristina 8, Post., 28982 Parla (Madrid)</p>
+                        <p><strong>Teléfono Fijo:</strong> <a href="tel:+34916985250">91 698 52 50</a></p>
+                        <p><strong>Móviles:</strong> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@aluminiosjutosa.com">info@aluminiosjutosa.com</a></p>
+                        <p><strong>Horario Tienda:</strong> Lunes-Viernes 9:00 – 14:00 y 17:00 – 20:00.<br>
+                        (Para consultas sobre la tienda los sábados, por favor contactar previamente.)</p>
+                        <div class="map-placeholder" id="map-tienda">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6091.684497901272!2d-3.7668765235793322!3d40.23480956669083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41f5388689e1eb%3A0xbc3c25e8cafe4018!2sAluminios%20Jutosa!5e0!3m2!1ses!2ses!4v1747391593817!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="location-card" id="fabrica">
+                        <h3><span class="icon">🏭</span> Fábrica</h3>
+                        <p><strong>Dirección:</strong> C/ Agustín de Betancourt, 30, 28984 Parla (Madrid)</p>
+                        <p><strong>Teléfono Fijo:</strong> <a href="tel:+34916644432">91 664 44 32</a></p>
+                        <p><strong>Móviles:</strong> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@aluminiosjutosa.com">info@aluminiosjutosa.com</a></p>
+                        <p><strong>Horario Fábrica:</strong> Lunes-Jueves 8:00 – 14:00 y 15:30 – 19:30<br>
+                        (Para consultas sobre la fábrica los viernes, por favor contactar previamente)</p>
+                        <div class="map-placeholder" id="map-fabrica">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6090.673422617069!2d-3.7901348235788737!3d40.246047666009325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41f4d4c3951f4d%3A0x2206f8f674b968ca!2sAluminios%20Jutosa!5e0!3m2!1ses!2ses!4v1747391536876!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-form-section">
+                <h2>Envíanos un Mensaje Directo</h2>
+                <form id="contactForm" action="https://formsubmit.co/marcos.toribio@campusfp.es" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo <span class="required">*</span></label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Ana García">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="Ej: ana.garcia@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (Opcional)</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 600123456">
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto <span class="required">*</span></label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="" disabled selected>-- Selecciona un motivo --</option>
+                            <option value="Consulta General / Otros">Consulta General / Otros</option>
+                            <option value="Presupuesto Ventanas (Aluminio/PVC)">Presupuesto Ventanas (Aluminio/PVC)</option>
+                            <option value="Presupuesto Puertas">Presupuesto Puertas</option>
+                            <option value="Presupuesto Cerramientos">Presupuesto Cerramientos</option>
+                            <option value="Presupuesto Mamparas de Baño">Presupuesto Mamparas de Baño</option>
+                            <option value="Presupuesto Persianas">Presupuesto Persianas</option>
+                            <option value="Presupuesto Frentes de Armario">Presupuesto Frentes de Armario</option>
+                            <option value="Reparaciones / Mantenimiento">Reparaciones / Mantenimiento</option>
+                            <option value="Servicios de Cerrajería">Servicios de Cerrajería</option>
+                            <option value="Información sobre Financiación">Información sobre Financiación</option>
+                            <option value="Seguimiento de Pedido/Trabajo">Seguimiento de Pedido/Trabajo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje <span class="required">*</span></label>
+                        <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Escribe aquí tu consulta detallada..."></textarea>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="¡Nuevo Mensaje desde la Web de Aluminios Jutosa!">
+                    
+                    <input type="text" name="_honey" style="display:none"> <div class="form-group privacy-check">
+                        <input type="checkbox" id="privacy" name="privacy" value="accepted" required>
+                        <label for="privacy" class="privacy-label">He leído y acepto la <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a> <span class="required">*</span></label>
+                    </div>
+                    <button type="submit" class="btn btn-primario">Enviar Mensaje</button>
+                </form>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="social-media">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa">
-                        <img src="img/LogoInstagram.png" alt="Instagram">
-                    </a>
-                    <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa">
-                        <img src="img/LogoFacebook.png" alt="Facebook">
-                    </a>
-                    <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa">
-                        <img src="img/LogoTiktok.png" alt="TikTok">
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa">
-                        <img src="img/LogoLinkedin.png" alt="LinkedIn">
-                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa"><img src="img/LogoInstagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa"><img src="img/LogoFacebook.png" alt="Facebook"></a>
+                    <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa"><img src="img/LogoTiktok.png" alt="TikTok"></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa"><img src="img/LogoLinkedin.png" alt="LinkedIn"></a>
                 </div>
-                <p class="copyright">&copy; <span id="current-year"></span> Jutosa TFG - Marcos. Todos los derechos reservados.</p>
+                <p class="copyright">© <span id="current-year"></span> Jutosa - Marcos. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
     <script>
-        // Pequeño script para actualizar el año del copyright automáticamente
-        document.getElementById("current-year").textContent = new Date().getFullYear();
+        if (document.getElementById("current-year")) {
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
