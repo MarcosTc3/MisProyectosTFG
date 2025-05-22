@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros trabajos - Jutosa Web (TFG Marcos)</title> </head>
+    <title>Nuestros Trabajos - Aluminios Jutosa</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nuestros-trabajos.css">
+</head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/NuevoLogoJutosa.png" alt="Logo Aluminios Jutosa" id="logo-img">
-                </a>
-            </div>
-            <nav id="main-nav"> <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
+            <div class="logo"><a href="index.html"><img src="img/NuevoLogojutosa.png" alt="Logo Aluminios Jutosa" id="logo-img"></a></div>
+            <nav id="main-nav">
+                <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
                 <ul id="menu-list">
                     <li><a href="index.html" class="nav-link">Inicio</a></li>
                     <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
@@ -30,33 +25,293 @@
         </div>
     </header>
 
-    <h1>Nuestros trabajos</h1>
+    <main>
+        <div class="container trabajos-page-container">
+            <section class="page-title-section">
+                <h1>Nuestros Trabajos Realizados</h1>
+                <p class="intro-text">Descubre la calidad y dedicación que ponemos en cada proyecto. Aquí te mostramos una selección de nuestros trabajos en carpintería de aluminio y PVC.</p>
+            </section>
+
+            <section class="filtros-trabajos">
+                <button class="filter-btn active" data-filter="all">TODOS</button>
+                <button class="filter-btn" data-filter="barandillas">BARANDILLAS</button>
+                <button class="filter-btn" data-filter="cerramientos">CERRAMIENTOS</button>
+                <button class="filter-btn" data-filter="mamparas-baño">MAMPARAS DE BAÑO</button>
+                <button class="filter-btn" data-filter="puertas-aluminio">PUERTAS DE ALUMINIO</button>
+                <button class="filter-btn" data-filter="pvc">PVC</button>
+                <button class="filter-btn" data-filter="techos">TECHOS</button>
+                <button class="filter-btn" data-filter="vallas">VALLAS</button>
+                <button class="filter-btn" data-filter="ventanas-aluminio">VENTANAS DE ALUMINIO</button>
+            </section>
+
+            <section class="galeria-trabajos">
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio.jpg" alt="Barandilla de aluminio resistente" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio1.jpg" alt="Barandilla de aluminio elegante" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio2.jpg" alt="Barandilla de aluminio para exterior" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio3.jpg" alt="Diseño de barandilla de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio4.jpg" alt="Instalación de barandilla de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio5.jpg" alt="Barandilla de aluminio con cristal" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio6.jpg" alt="Barandilla de aluminio moderna" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="barandillas">
+                    <img src="img/trabajos/barandillas/barandilla-aluminio7.jpg" alt="Otra barandilla de aluminio" loading="lazy">
+                </div>
+
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio1.jpg" alt="Cerramiento de aluminio para terraza" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio2.jpg" alt="Cerramiento de porche en aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio3.jpg" alt="Cerramiento acristalado de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio4.jpg" alt="Cerramiento de aluminio con panel sandwich" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio5.jpg" alt="Estructura de cerramiento de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio6.jpg" alt="Detalle de cerramiento de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio7ParteAlante.jpg" alt="Cerramiento de aluminio vista frontal" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio7ParteAtras.jpg" alt="Cerramiento de aluminio vista trasera" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio7VistaDesdeFuera.jpg" alt="Cerramiento de aluminio vista exterior" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio8.jpg" alt="Cerramiento de aluminio moderno" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio9.jpg" alt="Cerramiento de balcón en aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio10.jpg" alt="Cerramiento de aluminio para negocio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio11.jpg" alt="Proyecto de cerramiento en aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="cerramientos">
+                    <img src="img/trabajos/cerramientos/cerramiento-aluminio12.jpg" alt="Otro proyecto de cerramiento" loading="lazy">
+                </div>
+
+                <div class="proyecto-card vertical-image" data-categoria="mamparas-baño">
+                    <img src="img/trabajos/mamparas-baño/mampara-baño.jpg" alt="Mampara de baño moderna instalada" loading="lazy">
+                </div>
+                <div class="proyecto-card vertical-image" data-categoria="mamparas-baño">
+                    <img src="img/trabajos/mamparas-baño/mampara-baño1.jpg" alt="Mampara de baño corredera" loading="lazy">
+                </div>
+                <div class="proyecto-card vertical-image" data-categoria="mamparas-baño">
+                    <img src="img/trabajos/mamparas-baño/mampara-baño2.jpg" alt="Mampara de baño abatible" loading="lazy">
+                </div>
+                <div class="proyecto-card vertical-image" data-categoria="mamparas-baño">
+                    <img src="img/trabajos/mamparas-baño/mampara-baño3.jpg" alt="Detalle de mampara de baño" loading="lazy">
+                </div>
+
+                <div class="proyecto-card" data-categoria="puertas-aluminio">
+                    <img src="img/trabajos/puertas-aluminio/puerta-aluminio.jpg" alt="Puerta de entrada de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="puertas-aluminio">
+                    <img src="img/trabajos/puertas-aluminio/puerta-aluminio2.jpg" alt="Puerta de aluminio para exterior" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="puertas-aluminio">
+                    <img src="img/trabajos/puertas-aluminio/puerta-aluminio3.jpg" alt="Diseño de puerta de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="puertas-aluminio">
+                    <img src="img/trabajos/puertas-aluminio/puerta-aluminio4.jpg" alt="Puerta de aluminio con cristal" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="puertas-aluminio">
+                    <img src="img/trabajos/puertas-aluminio/puerta-aluminio5.jpg" alt="Puerta de aluminio resistente" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="puertas-aluminio">
+                    <img src="img/trabajos/puertas-aluminio/puerta-aluminio6.jpg" alt="Puerta de aluminio para jardín" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="puertas-aluminio">
+                    <img src="img/trabajos/puertas-aluminio/puerta-aluminio7.jpg" alt="Instalación de puerta de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="puertas-aluminio"> 
+                    <img src="img/trabajos/puertas-aluminio/valla-y-puerta-aluminio-blanca.jpg" alt="Puerta de aluminio blanca en valla" loading="lazy">
+                </div>
+                
+                <div class="proyecto-card" data-categoria="pvc">
+                    <img src="img/trabajos/pvc/puerta-PVC.jpg" alt="Puerta de PVC exterior" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="pvc">
+                    <img src="img/trabajos/pvc/ventana-pvc.jpg" alt="Ventana de PVC estándar" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="pvc">
+                    <img src="img/trabajos/pvc/ventana-pvc1.jpg" alt="Ventana de PVC blanca" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="pvc">
+                    <img src="img/trabajos/pvc/ventana-pvc2.jpg" alt="Ventana de PVC con aislamiento térmico" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="pvc">
+                    <img src="img/trabajos/pvc/ventana-pvc3.jpg" alt="Ventana de PVC moderna para vivienda" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="pvc">
+                    <img src="img/trabajos/pvc/ventana-pvc4.jpg" alt="Instalación de ventana de PVC eficiente" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="pvc"> 
+                    <img src="img/trabajos/pvc/ventanas-pvc.jpg" alt="Conjunto de ventanas de PVC" loading="lazy">
+                </div>
+
+                <div class="proyecto-card" data-categoria="techos">
+                    <img src="img/trabajos/techos/techos-aluminio.jpg" alt="Techo de lamas de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="techos">
+                    <img src="img/trabajos/techos/techos-aluminio2.jpg" alt="Techo de panel sandwich instalado" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="techos">
+                    <img src="img/trabajos/techos/techos-aluminio3.jpg" alt="Estructura de aluminio para techo" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="techos">
+                    <img src="img/trabajos/techos/techos-aluminio4.jpg" alt="Techo de policarbonato con estructura de aluminio" loading="lazy">
+                </div>
+
+                <div class="proyecto-card" data-categoria="vallas"> <img src="img/trabajos/puertas-aluminio/valla-y-puerta-aluminio-blanca.jpg" alt="Valla de aluminio blanca con puerta integrada" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="vallas">
+                    <img src="img/trabajos/vallas/valla-aluminio-blanca.jpg" alt="Valla de aluminio lacado blanco para jardín" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="vallas">
+                    <img src="img/trabajos/vallas/valla-aluminio-color-madera.jpg" alt="Valla de aluminio imitación madera" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="vallas">
+                    <img src="img/trabajos/vallas/valla-aluminio-zidane.jpg" alt="Valla de aluminio diseño Zidane" loading="lazy">
+                </div>
+
+                <div class="proyecto-card" data-categoria="ventanas-aluminio"> 
+                    <img src="img/trabajos/ventanas-aluminio/puerta-corredera-aluminio.jpg" alt="Ventana corredera de aluminio para terraza" loading="lazy">
+                </div>
+                 <div class="proyecto-card" data-categoria="puertas-aluminio"> <img src="img/trabajos/ventanas-aluminio/puerta-corredera-aluminio.jpg" alt="Puerta corredera de aluminio para acceso exterior" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="ventanas-aluminio">
+                    <img src="img/trabajos/ventanas-aluminio/ventana-aluminio.jpg" alt="Ventana de aluminio con rotura de puente térmico" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="ventanas-aluminio">
+                    <img src="img/trabajos/ventanas-aluminio/ventana-aluminio2.jpg" alt="Ventana de aluminio lacada en color" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="ventanas-aluminio">
+                    <img src="img/trabajos/ventanas-aluminio/ventana-oscilobatiente-aluminio.jpg" alt="Ventana oscilobatiente de aluminio" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="ventanas-aluminio">
+                    <img src="img/trabajos/ventanas-aluminio/ventana-oscilobatiente-aluminio2.jpg" alt="Ventana de aluminio oscilobatiente lacada en blanco" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="ventanas-aluminio">
+                    <img src="img/trabajos/ventanas-aluminio/ventana-oscilobatiente-aluminio3.jpg" alt="Ventana oscilobatiente de aluminio para baño o cocina" loading="lazy">
+                </div>
+                <div class="proyecto-card" data-categoria="ventanas-aluminio">
+                    <img src="img/trabajos/ventanas-aluminio/ventana-oscilobatiente-aluminio4.jpg" alt="Detalle mecanismo ventana oscilobatiente de aluminio" loading="lazy">
+                </div>
+            </section>
+
+            <section class="cta-trabajos">
+                <h2>¿Inspirado para tu Próximo Proyecto?</h2>
+                <p>Si tienes una idea o necesitas asesoramiento, no dudes en contactarnos.</p>
+                <a href="contacto.html" class="btn btn-primario">Solicita tu Presupuesto</a>
+            </section>
+        </div>
+    </main>
+
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-cerrar">&times;</span>
+        <img class="lightbox-contenido" id="lightbox-imagen" alt="Imagen ampliada del proyecto">
+        <div id="lightbox-caption"></div>
+    </div>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="social-media">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa">
-                        <img src="img/LogoInstagram.png" alt="Instagram">
-                    </a>
-                    <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa">
-                        <img src="img/LogoFacebook.png" alt="Facebook">
-                    </a>
-                    <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa">
-                        <img src="img/LogoTiktok.png" alt="TikTok">
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa">
-                        <img src="img/LogoLinkedin.png" alt="LinkedIn">
-                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa"><img src="img/LogoInstagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa"><img src="img/LogoFacebook.png" alt="Facebook"></a>
+                    <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa"><img src="img/LogoTiktok.png" alt="TikTok"></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa"><img src="img/LogoLinkedin.png" alt="LinkedIn"></a>
                 </div>
-                <p class="copyright">&copy; <span id="current-year"></span> Jutosa TFG - Marcos. Todos los derechos reservados.</p>
+                <p class="copyright">© <span id="current-year"></span> Jutosa - Marcos. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
     <script>
-        // Pequeño script para actualizar el año del copyright automáticamente
-        document.getElementById("current-year").textContent = new Date().getFullYear();
+        // Script para el año del copyright (si no está en main.js)
+        if (document.getElementById("current-year")) {
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lógica para los filtros de la galería
+            const filterButtons = document.querySelectorAll('.filtros-trabajos .filter-btn');
+            const galleryItems = document.querySelectorAll('.galeria-trabajos .proyecto-card');
+
+            if (filterButtons.length > 0 && galleryItems.length > 0) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        const filterValue = this.getAttribute('data-filter');
+
+                        galleryItems.forEach(item => {
+                            item.style.display = 'none';
+                            if (filterValue === 'all' || item.getAttribute('data-categoria') === filterValue) {
+                                item.style.display = 'block';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Lógica para el Lightbox
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImage = document.getElementById('lightbox-imagen');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeLightboxButton = document.querySelector('.lightbox-cerrar');
+            const galleryCardImages = document.querySelectorAll('.galeria-trabajos .proyecto-card img');
+
+            if (lightboxModal && lightboxImage && closeLightboxButton && galleryCardImages.length > 0) {
+                galleryCardImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        lightboxModal.style.display = 'block';
+                        lightboxImage.src = this.src;
+                        lightboxCaption.innerHTML = this.alt;
+                        document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+                    });
+                });
+
+                closeLightboxButton.addEventListener('click', function() {
+                    lightboxModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+
+                lightboxModal.addEventListener('click', function(event) {
+                    if (event.target === lightboxModal) {
+                        lightboxModal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            } else {
+                // console.warn("Elementos del lightbox no encontrados. Lightbox no funcionará.");
+            }
+        });
     </script>
 </body>
 </html>
