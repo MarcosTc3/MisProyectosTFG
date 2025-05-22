@@ -68,7 +68,7 @@
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block; 
+    display: block;
 }
 
 .proyecto-card:hover {
@@ -79,81 +79,19 @@
 .proyecto-card img {
     width: 100%;
     height: 220px; 
-    object-fit: cover; /* Recorta para llenar, por defecto */
+    object-fit: cover;
     display: block;
-    cursor: pointer; /* Indica que se puede hacer clic para el lightbox */
+    cursor: pointer;
     transition: opacity 0.3s ease;
 }
 .proyecto-card img:hover {
     opacity: 0.8;
 }
 
-/* Ajuste para imágenes verticales como la mampara de baño */
 .proyecto-card.vertical-image img {
-    object-fit: contain; /* Muestra la imagen completa dentro del contenedor */
-    background-color: #f8f8f8; /* Un fondo para el espacio vacío si la imagen no llena el contenedor */
+    object-fit: contain;
+    background-color: #f8f8f8;
 }
-
-
-/* Estilos para el Lightbox/Modal */
-.lightbox {
-    display: none; 
-    position: fixed; 
-    z-index: 1050; 
-    padding-top: 60px; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.9); /* Fondo más oscuro para mejor contraste */
-}
-
-.lightbox-contenido {
-    margin: auto;
-    display: block;
-    max-width: 90%; /* Más ancho para la imagen */
-    max-height: 85vh; 
-    border-radius: 4px;
-    animation-name: zoomIn; /* Pequeña animación */
-    animation-duration: 0.4s;
-}
-
-@keyframes zoomIn {
-    from {transform: scale(0.8); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
-}
-
-#lightbox-caption {
-    margin: 10px auto 20px auto; /* Ajustado margen */
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ddd; /* Color de texto más claro */
-    padding: 10px 0;
-    font-size: 1.1em;
-    line-height: 1.5;
-}
-
-.lightbox-cerrar {
-    position: absolute;
-    top: 20px; /* Más abajo */
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 45px; /* Más grande */
-    font-weight: bold;
-    transition: 0.3s;
-    line-height: 1; /* Para mejor alineación del caracter 'x' */
-}
-
-.lightbox-cerrar:hover,
-.lightbox-cerrar:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 
 /* Estilos para la sección de Llamada a la Acción (CTA) */
 .cta-trabajos {
@@ -198,19 +136,6 @@
     .proyecto-card img {
         height: 200px;
     }
-    /* Ajuste para el lightbox en pantallas más pequeñas */
-    .lightbox-contenido {
-        max-width: 95%;
-    }
-    #lightbox-caption {
-        font-size: 1em;
-        width: 90%;
-    }
-    .lightbox-cerrar {
-        font-size: 35px;
-        top: 15px;
-        right: 25px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -218,14 +143,14 @@
         font-size: 2.2em;
     }
     .galeria-trabajos {
-        /* Considera 1 columna si es muy estrecho, auto-fit ya lo maneja si minmax es adecuado */
-        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+    
     .proyecto-card img {
         height: 180px;
     }
      .filter-btn {
-        flex-grow: 1; /* Hace que los botones ocupen el ancho en filas */
-        min-width: 120px; /* Ancho mínimo para los botones de filtro */
+        flex-grow: 1;
+        min-width: 120px;
     }
 }

@@ -8,8 +8,8 @@
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.7;
-    background-color: #FFFFFF; /* Fondo blanco para el cuerpo */
-    color: #333333;     /* Texto principal oscuro */
+    background-color: #FFFFFF;
+    color: #333333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -23,18 +23,18 @@ body {
 }
 
 a {
-    color: #1E73BE; /* Azul principal para enlaces en el cuerpo */
+    color: #1E73BE;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #50C9F2; /* Azul claro para hover de enlaces en el cuerpo */
+    color: #50C9F2;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.75em;
-    color: #1E73BE; /* Azul principal para cabeceras en el cuerpo */
+    color: #1E73BE;
     font-weight: 600;
 }
 
@@ -46,9 +46,9 @@ img {
 
 /* --- Header --- */
 header {
-    background-color: rgb(38, 49, 120); /* MANTENIDO: Tu color de fondo original */
-    padding: 15px 0; /* Ajusta el padding si es necesario */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra un poco más pronunciada */
+    background-color: rgb(38, 49, 120); /* Color original mantenido */
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -58,27 +58,27 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Para ayudar con el contexto de z-index del menú móvil */
 }
 
 #logo-img {
-    max-height: 65px; /* MANTENIDO: Tus estilos originales sin borde */
+    max-height: 65px;
     width: auto;
+    /* Sin borde */
 }
 
 /* --- Responsive Navigation / Hamburger Menu --- */
-/* Estilos para el contenedor nav (si has añadido el ID 'main-nav' a tu etiqueta <nav> en el HTML) */
 nav#main-nav {
-    position: relative; 
+    position: relative;
 }
 
-/* Botón Hamburguesa (oculto en escritorio, visible en móvil) */
 .hamburger {
     display: none;
     padding: 10px;
     cursor: pointer;
     background-color: transparent;
     border: none;
-    z-index: 1001; 
+    z-index: 1001; /* Encima del menú desplegable */
 }
 
 .hamburger-box {
@@ -93,7 +93,7 @@ nav#main-nav {
 .hamburger-inner::after {
     width: 100%;
     height: 3px;
-    background-color: #FFFFFF; /* Color de las líneas de la hamburguesa */
+    background-color: #FFFFFF;
     border-radius: 3px;
     position: absolute;
     transition-property: transform, opacity;
@@ -101,157 +101,92 @@ nav#main-nav {
     transition-timing-function: ease;
 }
 
-.hamburger-inner {
-    display: block;
-    top: 50%;
-    margin-top: -1.5px; 
-}
+.hamburger-inner { display: block; top: 50%; margin-top: -1.5px; }
+.hamburger-inner::before { content: ''; display: block; top: -10px; }
+.hamburger-inner::after { content: ''; display: block; bottom: -10px; }
 
-.hamburger-inner::before,
-.hamburger-inner::after {
-    content: '';
-    display: block;
-}
+.hamburger.is-active .hamburger-inner { transform: rotate(45deg); }
+.hamburger.is-active .hamburger-inner::before { top: 0; transform: rotate(-90deg); }
+.hamburger.is-active .hamburger-inner::after { opacity: 0; }
 
-.hamburger-inner::before {
-    top: -10px; 
-}
-
-.hamburger-inner::after {
-    bottom: -10px; 
-}
-
-/* Animación de la hamburguesa a "X" */
-.hamburger.is-active .hamburger-inner {
-    transform: rotate(45deg);
-}
-.hamburger.is-active .hamburger-inner::before {
-    top: 0;
-    transform: rotate(-90deg);
-}
-.hamburger.is-active .hamburger-inner::after {
-    opacity: 0;
-}
-
-/* Estilos de Navegación para ESCRITORIO (adaptados de tus estilos originales) */
-/* Reemplaza tus anteriores 'header nav ul', 'header nav ul li', etc. con estos: */
-nav#main-nav ul#menu-list { /* Usa el ID que pusiste en tu <ul> en el HTML */
+nav#main-nav ul#menu-list {
     list-style: none;
-    display: flex; 
+    display: flex;
     align-items: center;
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
 }
 
 nav#main-nav ul#menu-list li {
-    margin-left: 35px; /* Mantiene tu espaciado original */
+    margin-left: 30px;
 }
 
-nav#main-nav ul#menu-list li a.nav-link { /* Usa la clase que pusiste en tus <a> del menú en el HTML */
-    color: #FFFFFF; 
-    font-weight: bold; 
-    font-size: 1.1em; /* Mantiene tu tamaño de fuente original */
-    padding-bottom: 8px; 
+nav#main-nav ul#menu-list li a.nav-link {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 5px;
+    padding-bottom: 8px;
     position: relative;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     text-decoration: none;
-    display: inline-block; 
+    display: inline-block;
 }
 
 nav#main-nav ul#menu-list li a.nav-link::after {
     content: '';
     position: absolute;
-    width: 0; /* Inicialmente oculta */
+    width: 0;
     height: 2.5px;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #FFD700; /* Tu color de línea amarillo */
+    background-color: #FFD700;
     transition: width 0.3s ease-in-out;
 }
 
-/* Tus estilos originales para hover y active en escritorio */
 nav#main-nav ul#menu-list li a.nav-link:hover::after,
 nav#main-nav ul#menu-list li a.nav-link.active::after {
     width: 100%;
 }
 
-nav#main-nav ul#menu-list li a.nav-link:hover {
-    color: #FFF; 
-}
-
-nav#main-nav ul#menu-list li a.nav-link.active {
-    color: #FFD700; /* Tu color para el enlace activo */
-}
-/* El estilo para a.nav-link.active::after ya está cubierto por la regla combinada de arriba */
+nav#main-nav ul#menu-list li a.nav-link:hover { color: #FFF; }
+nav#main-nav ul#menu-list li a.nav-link.active { color: #FFD700; }
 
 
-/* Media Query para estilos de Navegación en MÓVIL */
 @media (max-width: 768px) {
-    .hamburger {
-        display: inline-block;
-    }
-
+    .hamburger { display: inline-block; }
     nav#main-nav ul#menu-list {
-        display: none; 
+        display: none;
         flex-direction: column;
-        /* Cambios para mejor superposición y apariencia */
-        position: fixed; /* Cambiado de absolute a fixed */
-        top: 0; /* Empieza desde la parte superior de la ventana gráfica */
+        position: fixed;
+        top: 0;
         left: 0;
-        width: 100%; /* Ocupa todo el ancho de la ventana */
-        height: 100vh; /* Ocupa toda la altura de la ventana */
-        background-color: rgb(38, 49, 120); /* Tu color de fondo original */
-        padding-top: 80px; /* Espacio para no solaparse con el header si el header fuera visible encima, o para dar espacio arriba */
-        box-sizing: border-box; /* Para que el padding no aumente el tamaño total */
-        overflow-y: auto; /* Permite scroll si hay muchos elementos */
-        z-index: 999; /* Justo debajo del botón hamburguesa si este tiene z-index mayor */
-    }
-
-    /* Asegúrate que el botón hamburguesa esté por encima del menú desplegado */
-    .hamburger {
-        position: relative; /* O fixed si es necesario, dependiendo de la estructura del header */
-        z-index: 1001; /* Mayor que el z-index del menú desplegado */
-    }
-    /* Si el botón hamburguesa se queda detrás, puedes necesitar ajustar su posición o la del logo */
-    header .container {
-        position: relative; /* Para que el z-index de los hijos funcione bien en el flujo */
-    }
-
-
-    nav#main-nav ul#menu-list.is-active {
-        display: flex;
-    }
-
-    nav#main-nav ul#menu-list li {
-        margin-left: 0;
         width: 100%;
-        text-align: left; /* Alineado a la izquierda para mejor lectura */
+        height: 100vh;
+        background-color: rgb(38, 49, 120);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding-top: 70px; /* Ajusta según la altura de tu header visible */
+        box-sizing: border-box;
+        overflow-y: auto;
+        z-index: 1000; /* Debajo del botón hamburguesa */
     }
-
+    nav#main-nav ul#menu-list.is-active { display: flex; }
+    nav#main-nav ul#menu-list li { margin-left: 0; width: 100%; text-align: left; }
     nav#main-nav ul#menu-list li a.nav-link {
         display: block;
-        padding: 18px 30px; /* Más padding para mejor toque y apariencia */
+        padding: 18px 30px;
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        color: #FFFFFF;
-        font-size: 1.1em; /* Un poco más grande para móvil */
+        font-size: 1.1em;
     }
-
-    nav#main-nav ul#menu-list li:last-child a.nav-link {
-        border-bottom: none;
-    }
-
-    nav#main-nav ul#menu-list li a.nav-link::after {
-        display: none;
-    }
-
+    nav#main-nav ul#menu-list li:last-child a.nav-link { border-bottom: none; }
+    nav#main-nav ul#menu-list li a.nav-link::after { display: none; }
     nav#main-nav ul#menu-list li a.nav-link.active {
         background-color: rgba(255, 255, 255, 0.1);
         color: #FFD700;
     }
 }
-
 
 /* --- Main Content Area --- */
 main {
@@ -259,80 +194,132 @@ main {
     padding: 40px 0;
 }
 
+/* --- Estilos de Botones Globales --- */
+.btn {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 12px 28px; 
+    border-radius: 6px; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em; 
+    line-height: 1.5;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08); 
+}
+
+.btn i { /* Estilo para los iconos de Font Awesome dentro de los botones */
+    margin-right: 8px; 
+    font-size: 1.1em; 
+}
+
+.btn-primario {
+    background-color: #1E73BE; 
+    color: #FFFFFF;
+    border-color: #1E73BE; 
+}
+
+.btn-primario:hover,
+.btn-primario:focus {
+    background-color: #155a9b; 
+    border-color: #155a9b;
+    color: #FFFFFF;
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #1E73BE; 
+    border-color: #1E73BE; 
+}
+
+.btn-secundario:hover,
+.btn-secundario:focus {
+    background-color: #1E73BE; 
+    color: #FFFFFF; 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(30, 115, 190, 0.2); 
+}
+
 /* --- Footer --- */
 footer {
-    background-color: rgb(38, 49, 120); /* MANTENIDO: Tu color de fondo original */
-    color: #FFFFFF;     /* Texto blanco en el footer */
+    background-color: rgb(38, 49, 120); /* Color original mantenido */
+    color: #FFFFFF;
     padding: 40px 0;
     text-align: center;
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); /* Sombra superior */
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
 }
 
-footer .social-media {
-    margin-bottom: 25px;
+footer .social-media { margin-bottom: 25px; }
+footer .social-media a { display: inline-block; margin: 0 12px; transition: transform 0.2s ease-in-out; }
+footer .social-media img { height: 35px; width: 35px; /* Sin borde */ }
+footer .social-media a:hover { transform: scale(1.2); }
+footer .legal-links { margin-bottom: 20px; }
+footer .legal-links a { color: #BBE5FF; font-size: 0.95em; margin: 0 10px; }
+footer .legal-links a:hover { color: #FFD700; text-decoration: underline; }
+footer .copyright { font-size: 0.9em; color: #A8D8F0; margin-top: 20px; }
+
+/* --- Lightbox Modal (GLOBAL) --- */
+.lightbox {
+    display: none; 
+    position: fixed; 
+    z-index: 1050; /* Asegura que esté por encima de otros contenidos */
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite scroll si la imagen es muy grande */
+    background-color: rgba(0,0,0,0.9); /* Fondo oscuro semitransparente */
 }
 
-footer .social-media a {
-    display: inline-block;
-    margin: 0 12px;
-    transition: transform 0.2s ease-in-out;
+.lightbox-contenido {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Máximo ancho de la imagen */
+    max-height: 85vh; /* Máxima altura relativa a la ventana */
+    border-radius: 4px;
+    animation-name: zoomInLightbox; /* Nombre único para la animación */
+    animation-duration: 0.4s;
 }
 
-footer .social-media img {
-    height: 35px; /* MANTENIDO: Tus estilos originales sin borde */
-    width: 35px;
+/* Animación para el Lightbox */
+@keyframes zoomInLightbox {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
 }
 
-footer .social-media a:hover {
-    transform: scale(1.2); /* Efecto de hover más pronunciado */
+#lightbox-caption {
+    margin: 10px auto 20px auto; 
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ddd; 
+    padding: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
 }
 
-footer .legal-links {
-    margin-bottom: 20px;
+.lightbox-cerrar { /* Selector más específico si fuera necesario: .lightbox .lightbox-cerrar */
+    position: absolute;
+    top: 20px; 
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 45px; 
+    font-weight: bold;
+    transition: 0.3s;
+    line-height: 1; 
+    cursor: pointer;
 }
 
-footer .legal-links a {
-    color: #BBE5FF; /* Un azul muy clarito para los enlaces legales */
-    font-size: 0.95em;
-    margin: 0 10px;
-}
-
-footer .legal-links a:hover {
-    color: #FFD700; /* Amarillo de acento al pasar el ratón */
-    text-decoration: underline;
-}
-
-footer .copyright {
-    font-size: 0.9em;
-    color: #A8D8F0; /* Un azul claro para el copyright */
-    margin-top: 20px;
-}
-
-/* Estas son las Media Queries que tenías al final de tu archivo original. */
-/* Las mantengo tal cual, asumiendo que son para estilos globales o clases que usas en varias páginas. */
-/* Si son muy específicas de 'quienes-somos.html', considera moverlas a 'quienes-somos.css'. */
-
-/* En css/quienes-somos.css o style.css */ /* Comentario original tuyo */
-/* Estilos base (para móviles primero, o para escritorio) */ /* Comentario original tuyo */
-/* ... tus estilos actuales ... */ /* Comentario original tuyo, lo comento si no hay nada debajo que sea "actual" antes de la MQ */
-
-/* Ajustes para pantallas más pequeñas, por ejemplo, menos de 768px */
-@media (max-width: 768px) {
-    .page-title-section h1 { /* Esta clase es muy específica, asegúrate de su ámbito */
-        font-size: 2em; 
-    }
-
-    .mision-vision { /* Esta clase también es específica */
-        flex-direction: column; 
-        gap: 20px;
-    }
-
-    /* Otros ajustes que puedas necesitar */ /* Comentario original tuyo */
-}
-
-@media (max-width: 480px) {
-    .botones-accion .btn { /* Esta clase también es específica */
-        padding: 10px 15px; 
-        font-size: 0.9em;
-    }
+.lightbox-cerrar:hover,
+.lightbox-cerrar:focus {
+    color: #bbb;
+    text-decoration: none;
 }

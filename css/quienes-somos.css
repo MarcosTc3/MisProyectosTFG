@@ -1,216 +1,225 @@
-/* css/quienes-somos.css - Estilos para la página "Quiénes Somos" */
-
-/* Título principal de la página */
-.page-title-section h1 {
+/* Contenedor principal de la página */
+.quienes-somos-page-container .page-title-section {
     text-align: center;
-    color: #1E73BE; /* Azul principal */
     margin-bottom: 30px;
-    font-size: 2.5em; /* Un poco más grande */
+}
+.quienes-somos-page-container .page-title-section h1 {
+    font-size: 2.8em;
+    color: #1E73BE;
+    margin-bottom: 15px;
 }
 
-/* Estilos para las secciones generales de contenido */
+/* Introducción y secciones de texto */
+.quienes-somos-intro,
+.nuestros-valores,
+.nuestros-servicios-qs,
+.donde-estamos-parla,
+.nuestro-equipo,
+.evolucion-seccion {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Regla general para los H2 de sección, incluyendo el de .llamada-accion-qs */
 .quienes-somos-intro h2,
-.mision-vision h3,
 .nuestros-valores h2,
 .nuestro-equipo h2,
+.evolucion-seccion > h2, /* Título principal de toda la sección de evolución */
 .nuestros-servicios-qs h2,
-.donde-estamos-parla h2, /* Añadido */
-.progreso-empresa h2,
-.llamada-accion-qs h2 {
-    color: #1E73BE; /* Azul principal */
-    margin-top: 40px;
+.donde-estamos-parla h2,
+.llamada-accion-qs h2 { /* Aquí se incluye el título que quieres centrar */
+    color: #1E73BE;
+    margin-top: 0;
     margin-bottom: 20px;
-}
-.quienes-somos-intro p, 
-.mision-vision p, 
-.nuestros-valores li, 
-.nuestro-equipo p, 
-.nuestros-servicios-qs p,
-.donde-estamos-parla p, /* Añadido */
-.progreso-empresa > p:first-of-type, /* Para el párrafo introductorio de la sección progreso */
-.llamada-accion-qs p {
-    margin-bottom: 15px;
-    line-height: 1.7;
-    color: #333;
+    /* text-align: center; Ya no es necesario aquí si el padre lo centra */
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9e9e9;
+    display: inline-block; /* Para que el borde se ajuste al texto */
+    /* Las siguientes líneas para centrar el bloque inline-block son redundantes si el padre tiene text-align: center */
+    /* position: relative; */
+    /* left: 50%;        */
+    /* transform: translateX(-50%); */
 }
 
-/* Sección Misión y Visión (sin cambios respecto a la anterior propuesta) */
+
+.quienes-somos-intro p,
+.nuestro-equipo .equipo-texto-qs p,
+.nuestros-servicios-qs p,
+.donde-estamos-parla p {
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+}
+.quienes-somos-intro p:last-child,
+.nuestro-equipo .equipo-texto-qs p:last-child,
+.nuestros-servicios-qs p:last-child,
+.donde-estamos-parla p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Misión y Visión */
 .mision-vision {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 .mision, .vision {
     flex: 1;
     min-width: 280px;
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     border-left: 5px solid #50C9F2;
 }
 .mision h3, .vision h3 {
     margin-top: 0;
+    margin-bottom: 15px;
     color: #1E73BE;
+    font-size: 1.5em;
+    /* No necesitan centrado especial si el texto dentro debe ir a la izquierda */
+}
+.mision p, .vision p {
+    line-height: 1.65;
+    color: #444;
 }
 
-/* Nuestros Valores (sin cambios respecto a la anterior propuesta) */
-.nuestros-valores ul {
-    list-style: none;
-    padding-left: 0;
-}
-.nuestros-valores li {
-    padding-left: 25px;
-    position: relative;
-    margin-bottom: 12px;
-}
-.nuestros-valores li::before {
-    content: '✔';
-    color: #1E73BE;
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
+/* Nuestros Valores */
+.nuestros-valores ul { list-style: none; padding-left: 0; }
+.nuestros-valores li { padding-left: 30px; position: relative; margin-bottom: 12px; line-height: 1.6; color: #333; }
+.nuestros-valores li::before { content: '✔'; color: #1E73BE; position: absolute; left: 0; top: 1px; font-weight: bold; font-size: 1.1em; }
+.nuestros-valores li strong { color: #111; }
 
-/* Nuestro Equipo (sin cambios respecto a la anterior propuesta) */
-.nuestro-equipo .equipo-contenido {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-.nuestro-equipo .equipo-texto {
-    flex: 2;
-    min-width: 280px;
-}
-.nuestro-equipo .equipo-foto {
-    flex: 1;
+/* Nuestro Equipo */
+.equipo-contenido-qs { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; margin-top: 10px; }
+.equipo-texto-qs { flex: 1.5; min-width: 300px; }
+.equipo-foto-qs { flex: 1; min-width: 250px; max-width: 380px; margin: 0 auto; text-align: center; }
+.equipo-foto-qs img { width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+/* Sección de Evolución General */
+.evolucion-seccion { background-color: #f9f9f9; }
+
+.evolucion-subsection { margin-bottom: 40px; }
+.evolucion-subsection:last-child { margin-bottom: 10px; }
+.evolucion-subsection h3 { /* Este H3 sí debe estar centrado por su propio text-align o por el del padre */
     text-align: center;
-    min-width: 250px;
+    color: #1E73BE; /* Coherente con otros H3 de subsección */
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    /* No necesita display:inline-block ni transform si es text-align:center y es un bloque */
 }
-.nuestro-equipo .equipo-foto img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.nuestro-equipo .equipo-foto .caption {
-    font-size: 0.85em;
-    color: #777;
-    margin-top: 8px;
-    font-style: italic;
-}
+.text-center-italic { text-align: center; font-style: italic; color: #666; margin-bottom: 20px; display: block; }
 
-/* Sección Dónde Estamos en Parla (NUEVA) */
+.image-evolution-strip, .image-evolution-pair { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.evolution-item { flex: 1 1 280px; max-width: 350px; text-align: center; background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.07); border: 1px solid #e9e9e9; }
+.image-evolution-pair .evolution-item { max-width: 400px; }
+.evolution-item img { width: 100%; height: 220px; object-fit: cover; border-radius: 4px; margin-bottom: 12px; border: 1px solid #ddd; }
+.evolution-item img.contain { object-fit: contain; background-color: #f0f0f0; }
+.evolution-item p { font-size: 0.9em; color: #555; margin-top: 5px; line-height: 1.4; }
+
+/* Estilos para la sección "Donde Estamos en Parla" */
 .donde-estamos-parla {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #eef7ff; /* Un azul muy claro */
-    border-radius: 8px;
-    margin-top: 40px;
-    margin-bottom: 30px; /* Ajustado margen inferior */
+    margin-top: 30px;
+    text-align: center; /* Centra el contenido de esta sección, incluyendo el h2 si es inline-block */
 }
-.donde-estamos-parla h2 {
-    margin-top: 0; /* Ya tiene margen superior por la regla general */
-}
-.donde-estamos-parla p a { /* Estilo específico para el enlace a Contacto */
-    font-weight: bold;
-    color: #155a9b; 
-    text-decoration: underline;
-}
-.donde-estamos-parla p a:hover {
-    color: #50C9F2;
-}
+/* El h2 de .donde-estamos-parla ya está cubierto por la regla general de H2 de sección */
 
 
-/* Estilos para la sección de progreso de la empresa (MODIFICADA para 4 imágenes) */
-.progreso-empresa h2 {
-    text-align: center; /* Asegurar centrado */
-}
-.progreso-empresa > p:first-of-type { /* Párrafo introductorio debajo del H2 */
-    text-align: center;
-    margin-bottom: 25px; /* Espacio antes de las fotos */
-    color: #555;
-    font-size: 1.05em; /* Ligeramente más grande */
-}
-
-.fotos-progreso {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Columnas responsivas, mínimo 260px */
-    gap: 20px; /* Espacio entre las tarjetas de foto */
-    margin-top: 20px;
-}
-
-.foto-evolucion { /* Estilo para cada una de las 4 tarjetas de evolución */
-    text-align: center;
-    background-color: #ffffff; /* Fondo blanco para las tarjetas */
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0; /* Borde más sutil */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Sombra suave */
-    display: flex; /* Para mejor control interno del contenido */
-    flex-direction: column;
-    justify-content: space-between; /* Para distribuir el espacio si las descripciones varían */
-}
-
-.foto-evolucion img {
-    width: 100%; /* Imagen ocupa todo el ancho de la tarjeta */
-    max-width: 100%; /* No necesita max-width específico aquí si la tarjeta ya tiene control */
-    height: 200px; /* Altura fija para las imágenes para uniformidad, ajustar según fotos */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-.foto-evolucion p { /* Estilo para los pies de foto dentro de .foto-evolucion */
-    font-style: normal; /* No necesariamente itálica si es descriptiva */
-    color: #333; /* Color de texto más oscuro */
-    font-size: 0.9em;
-    margin-top: auto; /* Empuja el texto hacia abajo si la imagen es más corta */
-    padding-top: 10px; /* Espacio sobre el texto */
-}
-
-/* Sección de Llamada a la Acción (sin cambios respecto a la anterior propuesta) */
+/* Estilos para la sección "Llamada a la Acción" (ACTUALIZADO PARA CENTRAR H2) */
 .llamada-accion-qs {
-    text-align: center;
+    margin-top: 30px;
     padding: 40px 20px;
     background-color: #f4faff;
     border-radius: 8px;
-    margin-top: 50px;
+    text-align: center; /* Clave para centrar el h2 (si es inline-block) y el p */
 }
-.llamada-accion-qs h2 {
-    margin-top: 0;
-}
-.botones-accion {
-    margin-top: 20px;
-}
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    margin: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-.btn-primario {
-    background-color: #1E73BE;
-    color: #FFFFFF;
-}
-.btn-primario:hover {
-    background-color: #155a9b;
-    color: #FFFFFF;
-}
-.btn-secundario {
-    background-color: transparent;
+
+.llamada-accion-qs h2 { /* Estilo específico para este H2 para asegurar el centrado */
     color: #1E73BE;
-    border-color: #1E73BE;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9e9e9;
+    display: inline-block; /* Para que el borde se ajuste al texto y se centre por el text-align del padre */
+    /* No son necesarias las líneas de left: 50% y transform aquí */
 }
-.btn-secundario:hover {
-    background-color: #1E73BE;
-    color: #FFFFFF;
+
+.llamada-accion-qs p { /* El text-align:center del padre ya debería centrar este párrafo */
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #333;
+    /* max-width: 600px; */ /* Opcional: si quieres limitar el ancho del párrafo */
+    /* margin-left: auto;  */ /* Opcional: para centrar el bloque del párrafo si tiene max-width */
+    /* margin-right: auto; */ /* Opcional */
+}
+
+.llamada-accion-qs .botones-accion {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los botones */
+    gap: 15px;
+}
+
+
+/* Media Queries específicas para quienes-somos.css */
+@media (max-width: 768px) {
+    .quienes-somos-page-container .page-title-section h1 {
+        font-size: 2.4em;
+    }
+    .mision-vision {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .equipo-contenido-qs {
+        flex-direction: column;
+    }
+    .equipo-foto-qs {
+        order: -1; 
+        margin-bottom: 25px;
+        max-width: 320px;
+    }
+    .evolucion-subsection h3 {
+        font-size: 1.3em;
+    }
+    /* Los estilos del lightbox ya son globales desde style.css */
+}
+
+@media (max-width: 480px) {
+    .quienes-somos-page-container .page-title-section h1 {
+        font-size: 2em;
+    }
+     .mision h3, .vision h3, .evolucion-subsection h3 {
+        font-size: 1.2em;
+    }
+    .evolution-item img {
+        height: 180px;
+    }
+     .nuestros-valores li {
+        padding-left: 25px;
+        font-size: 0.95em;
+    }
+    .nuestros-valores li::before {
+        font-size: 1em;
+    }
+    /* Ajuste específico para los botones en la sección llamada-accion-qs en móvil */
+    .llamada-accion-qs .botones-accion .btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        width: 100%; /* Hace que cada botón ocupe el ancho completo en pantallas muy pequeñas */
+        margin-bottom: 10px; /* Espacio si se apilan */
+    }
+    .llamada-accion-qs .botones-accion .btn:last-child {
+        margin-bottom: 0;
+    }
+    .llamada-accion-qs .botones-accion {
+        flex-direction: column; /* Apila los botones en pantallas muy pequeñas */
+        gap: 10px; /* Ajusta el gap para la vista en columna */
+    }
 }

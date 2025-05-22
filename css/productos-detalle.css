@@ -1,0 +1,265 @@
+/* css/productos-detalle.css */
+
+.product-detail-page .page-title-section {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #1E73BE;
+    padding-bottom: 20px;
+}
+.product-detail-page .page-title-section h1 {
+    font-size: 2.6em;
+    color: #1E73BE;
+    margin-bottom: 0;
+}
+
+/* Sección de Introducción a la Familia de Productos */
+.intro-product-family {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+.intro-product-family .intro-content {
+    display: flex;
+    flex-wrap: wrap; /* Para que se ajuste en móvil */
+    gap: 30px;
+    align-items: flex-start; /* Alinear items arriba */
+    margin-bottom: 20px;
+}
+.intro-product-family .intro-image {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    max-width: 350px; /* Límite para la imagen de intro */
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer; /* Para el lightbox */
+}
+.intro-product-family .intro-text {
+    flex: 2 1 400px; /* Que el texto ocupe más espacio */
+}
+.intro-product-family .intro-text h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.intro-product-family .intro-text p {
+    font-size: 1em;
+    line-height: 1.65;
+    color: #444;
+    margin-bottom: 12px;
+}
+.intro-product-family .additional-intro-text {
+    clear: both; /* Por si el float de la imagen anterior afecta */
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+.intro-product-family .additional-intro-text h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+.intro-product-family .additional-intro-text p {
+    font-size: 1em;
+    line-height: 1.65;
+    color: #444;
+}
+
+/* Para la sección de perfiles clave en la página de PVC */
+.key-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+.profile-summary {
+    flex: 1 1 300px; /* Permite 2 columnas si hay espacio */
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e9e9e9;
+}
+.profile-summary-image {
+    width: 100px; /* Ancho fijo para la imagen pequeña del perfil */
+    height: auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    cursor: pointer; /* Para el lightbox */
+}
+.profile-summary-text h4 {
+    font-size: 1.2em;
+    color: #1E73BE;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+.profile-summary-text p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+/* Sección de Línea de Productos */
+.product-line-section {
+    margin-bottom: 40px;
+}
+.product-line-section > h2 { /* Título general de la línea de productos */
+    text-align: center;
+    font-size: 2em;
+    color: #1E73BE;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+.product-series-title { /* Para "Serie TOP 90", "Serie TOP 72" */
+    font-size: 1.6em;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #ccc;
+    font-style: italic;
+}
+.product-series-title:first-of-type { /* El primer título de serie no necesita tanto margen superior */
+    margin-top: 10px;
+}
+
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden; /* Para manejar floats internos si los hubiera */
+}
+.product-item::after { /* Clearfix por si usas floats dentro (aunque flex es mejor) */
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.product-item .product-profile-image {
+    width: 120px; /* Ancho de la imagen pequeña del perfil */
+    float: left; /* Como en tu maqueta original */
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    cursor: pointer; /* Para el lightbox */
+}
+
+.product-item .product-description {
+    overflow: hidden; /* Para contener el float de la imagen */
+}
+.product-item .product-description h3, /* Para FIN-Project... */
+.product-item .product-description h4 { /* Para Top 90 Classic-line... */
+    font-size: 1.4em;
+    color: #1E73BE; /* Color principal para los nombres de producto */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.product-item .product-description p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 0; /* El artículo ya tiene margin-bottom */
+}
+
+.product-item .product-showcase-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    clear: both; /* Para asegurar que esté debajo del contenido flotante */
+    border: 1px solid #eee;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    cursor: pointer; /* Para el lightbox */
+}
+
+/* Llamada a la acción al final de la página de detalle */
+.cta-product-detail {
+    text-align: center;
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #f4faff;
+    border-radius: 8px;
+}
+.cta-product-detail p {
+    font-size: 1.15em;
+    margin-bottom: 0; /* El botón tendrá su propio margen si es necesario */
+}
+.cta-product-detail .btn { /* Hereda de style.css */
+    margin-top: 15px; /* Espacio si el p tiene texto */
+}
+
+
+/* Media Queries para product-detail-page */
+@media (max-width: 768px) {
+    .product-detail-page .page-title-section h1 {
+        font-size: 2.2em;
+    }
+    .intro-product-family .intro-content {
+        flex-direction: column; /* Apila imagen y texto de intro */
+        align-items: center; /* Centra la imagen cuando se apila */
+    }
+    .intro-product-family .intro-image {
+        max-width: 100%; /* Que la imagen ocupe el ancho disponible */
+        margin-bottom: 20px;
+    }
+    .intro-product-family .intro-text {
+        text-align: center; /* Centra el texto de introducción en móvil */
+    }
+    .key-profiles {
+        flex-direction: column; /* Apila los perfiles resumen */
+    }
+    .profile-summary {
+        flex-direction: column; /* Apila imagen y texto dentro del perfil resumen */
+        align-items: center;
+        text-align: center;
+    }
+    .profile-summary-image {
+        margin-bottom: 10px;
+        margin-right: 0; /* Sin margen derecho cuando está apilado */
+    }
+
+    .product-item .product-profile-image {
+        float: none; /* Quita el float en móvil */
+        display: block;
+        margin: 0 auto 15px auto; /* Centra la imagen del perfil */
+        max-width: 150px; /* Limita el tamaño */
+    }
+    .product-item .product-description {
+        text-align: center; /* Centra la descripción en móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-detail-page .page-title-section h1 {
+        font-size: 1.9em;
+    }
+    .intro-product-family .intro-text h2,
+    .intro-product-family .additional-intro-text h3 {
+        font-size: 1.4em;
+    }
+    .product-line-section > h2 {
+        font-size: 1.7em;
+    }
+    .product-series-title {
+        font-size: 1.4em;
+    }
+    .product-item .product-description h3,
+    .product-item .product-description h4 {
+        font-size: 1.2em;
+    }
+}
