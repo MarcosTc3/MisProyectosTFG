@@ -2,173 +2,200 @@
 
 .ps-page-container .page-title-section {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .ps-page-container .page-title-section h1 {
     font-size: 2.8em;
     color: #1E73BE;
-    margin-bottom: 15px;
-}
-
-.ps-page-container .intro-text {
-    font-size: 1.1em;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto 50px auto; /* Más margen inferior */
-    line-height: 1.7;
-    text-align: center;
-}
-
-/* Grid para las Tarjetas de Categoría de Producto */
-.product-category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
-    gap: 30px; /* Espacio entre tarjetas */
-    margin-bottom: 50px;
-}
-
-.category-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    overflow: hidden; /* Para que la imagen se ajuste al borde redondeado */
-    display: flex;
-    flex-direction: column; /* Apila imagen, contenido y botón */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.category-card-image {
-    width: 100%;
-    height: 200px; /* Altura fija para las imágenes de tarjeta */
-    object-fit: cover; /* Asegura que la imagen cubra sin deformarse */
-}
-
-.category-card-content {
-    padding: 20px 25px;
-    flex-grow: 1; /* Hace que esta sección ocupe el espacio disponible */
-    display: flex;
-    flex-direction: column;
-}
-
-.category-card-content h2 {
-    font-size: 1.5em;
-    color: #1E73BE;
-    margin-top: 0;
     margin-bottom: 10px;
 }
 
-.category-card-content p {
-    font-size: 0.95em;
-    line-height: 1.6;
+.ps-page-container .intro-text {
+    font-size: 1.15em;
     color: #444;
-    margin-bottom: 15px;
-    flex-grow: 1; /* Empuja el botón hacia abajo si el texto es corto */
-}
-
-.category-card-content .btn.btn-secundario {
-    margin-top: auto; /* Alinea el botón al final de la tarjeta */
-    padding: 10px 20px; /* Ajusta el padding del botón si es necesario */
-    font-size: 0.9em;
-    align-self: flex-start; /* Alinea el botón a la izquierda dentro de la tarjeta */
-}
-.category-card-content .btn.btn-secundario i {
-    margin-left: 5px; /* Espacio para el icono de flecha */
-    font-size: 0.9em;
-}
-
-
-/* Sección Otros Servicios y CTA */
-.otros-servicios-ps {
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+    line-height: 1.75;
     text-align: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9; /* Fondo ligeramente diferente */
-    border-radius: 8px;
-    margin-top: 30px;
+}
+
+/* Estructura para bloques de servicio alternados */
+.product-service-alternating .service-block {
+    display: flex;
+    flex-wrap: wrap; /* Para que se apilen en móviles */
+    align-items: center; /* Centra verticalmente imagen y contenido */
+    margin-bottom: 50px; /* Espacio entre bloques de servicio */
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    border: 1px solid #eef2f7;
+}
+.product-service-alternating .service-block:last-child {
     margin-bottom: 30px;
 }
 
-.otros-servicios-ps h2 {
+.service-block .service-image-container {
+    flex: 1 1 40%; /* Crece, Encoge, Base */
+    min-width: 280px; /* Asegura que la imagen no se encoja demasiado */
+    padding: 10px; /* Espacio alrededor de la imagen */
+}
+
+.service-block .service-image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 350px; /* Altura máxima para la imagen, ajusta según necesidad */
+    object-fit: cover; /* O 'contain' si prefieres ver toda la imagen */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-block .service-content-container {
+    flex: 1 1 55%; /* Crece, Encoge, Base */
+    min-width: 300px;
+    padding: 20px;
+}
+
+/* Orden para alternar: Imagen a la Izquierda por defecto */
+.service-block.layout-image-left .service-image-container {
+    order: 1;
+}
+.service-block.layout-image-left .service-content-container {
+    order: 2;
+    padding-left: 30px; /* Más espacio si el texto está a la derecha */
+}
+
+/* Orden para Contenido a la Izquierda, Imagen a la Derecha */
+.service-block.layout-image-right .service-content-container {
+    order: 1;
+    padding-right: 30px; /* Más espacio si el texto está a la izquierda */
+}
+.service-block.layout-image-right .service-image-container {
+    order: 2;
+}
+
+
+.service-content-container h2 {
+    font-size: 2em; /* Título de la categoría */
     color: #1E73BE;
     margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.service-content-container p {
+    font-size: 1.05em; /* Tamaño de la descripción */
+    line-height: 1.7;
+    color: #333; /* Texto principal un poco más oscuro */
     margin-bottom: 25px;
-    font-size: 1.8em;
-    border-bottom: 2px solid #e0e0e0;
-    display: inline-block;
-    padding-bottom: 10px;
 }
 
-.otros-servicios-ps ul {
-    list-style: none;
-    padding: 0;
+.service-content-container .btn.btn-secundario {
+    padding: 10px 25px;
+    font-size: 0.95em;
+    /* Estilos de .btn y .btn-secundario vienen de style.css */
+}
+.service-content-container .btn.btn-secundario i {
+    margin-left: 6px;
+    font-size: 0.9em;
+}
+
+
+/* Sección de Llamada a la Acción General al final de la página */
+.cta-ps-general {
+    text-align: center;
+    padding: 45px 25px;
+    background-color: #f0f6ff;
+    border-radius: 8px;
+    margin-top: 40px;
+    border-top: 3px solid #1E73BE;
+}
+
+.cta-ps-general h2 {
+    color: #1E73BE;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.cta-ps-general p {
     margin-bottom: 25px;
-    display: inline-block; /* Para centrar la lista si el texto no es muy largo */
-    text-align: left; /* Alinea el texto de los items a la izquierda */
+    font-size: 1.15em;
+    color: #444;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.otros-servicios-ps ul li {
-    font-size: 1.05em;
-    color: #333;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
+.cta-ps-general .btn.btn-primario {
+    padding: 14px 35px;
+    font-size: 1.15em;
 }
-
-.otros-servicios-ps ul li i.fa-check-circle { /* Estilo para el icono de check */
-    color: #28a745; /* Un color verde para el check */
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.otros-servicios-ps > p { /* Párrafo final antes del botón */
-    margin-bottom: 25px;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.otros-servicios-ps .btn.btn-primario {
-    padding: 12px 30px;
-    font-size: 1.1em;
-}
-
 
 /* Media queries para ajustar en móviles */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Tabletas y móviles grandes en horizontal */
     .ps-page-container .page-title-section h1 {
         font-size: 2.4em;
     }
     .ps-page-container .intro-text {
-        font-size: 1em;
+        font-size: 1.1em;
         margin-bottom: 40px;
     }
-    .product-category-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Asegura buen tamaño mínimo */
-        gap: 25px;
+
+    .service-block {
+        flex-direction: column; /* Apila imagen y contenido */
+        padding: 20px;
+        margin-bottom: 40px;
     }
-    .category-card-content h2 {
-        font-size: 1.3em;
+    .service-block .service-image-container,
+    .service-block .service-content-container {
+        order: 0 !important; /* Resetea el orden para que siempre sea imagen arriba, texto abajo */
+        padding-left: 15px; /* Ajusta padding para móvil */
+        padding-right: 15px;
     }
-     .category-card-content p {
-        font-size: 0.9em;
+    .service-block .service-image-container {
+        margin-bottom: 20px; /* Espacio entre imagen y texto cuando están apilados */
+        max-width: 100%; /* Permite que la imagen ocupe más si es necesario */
+    }
+    .service-block .service-image-container img {
+        max-height: 300px; /* Ajusta altura máxima en tablet/móvil */
+    }
+    .service-content-container h2 {
+        font-size: 1.7em;
+        text-align: center; /* Centra el título en móvil */
+    }
+     .service-content-container p {
+        font-size: 1em;
+        text-align: center; /* Centra el párrafo en móvil */
+    }
+    .service-content-container .btn.btn-secundario {
+        align-self: center; /* Centra el botón */
+        margin: 0 auto; /* Asegurar centrado si es inline-flex */
+        display: table; /* Otra forma de centrar botones si son inline-flex */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Móviles más pequeños */
     .ps-page-container .page-title-section h1 {
         font-size: 2em;
     }
-    .product-category-grid {
-        grid-template-columns: 1fr; /* Una columna en móviles muy pequeños */
+    .service-block .service-image-container img {
+        max-height: 250px;
     }
-    .otros-servicios-ps ul {
-        width: 100%; /* Que la lista ocupe el ancho para mejor lectura */
+    .service-content-container h2 {
+        font-size: 1.5em;
     }
-    .otros-servicios-ps ul li {
-        font-size: 1em;
+    .service-content-container p {
+        font-size: 0.95em;
+    }
+    .cta-ps-general h2 {
+        font-size: 1.7em;
+    }
+    .cta-ps-general p {
+        font-size: 1.05em;
+    }
+    .cta-ps-general .btn.btn-primario {
+        padding: 12px 25px;
+        font-size: 1.05em;
     }
 }

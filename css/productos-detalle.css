@@ -1,265 +1,318 @@
 /* css/productos-detalle.css */
 
-.product-detail-page .page-title-section {
+/* Estilo para el Título Hero de la Página de Producto */
+.page-title-hero {
+    padding: 90px 20px;
     text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #1E73BE;
-    padding-bottom: 20px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    overflow: hidden;
 }
-.product-detail-page .page-title-section h1 {
-    font-size: 2.6em;
-    color: #1E73BE;
-    margin-bottom: 0;
+.page-title-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55); 
+    z-index: 1;
+    border-radius: inherit;
 }
+.page-title-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.page-title-hero h1 {
+    font-size: 3em; 
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+.page-title-hero .hero-subtitle {
+    font-size: 1.3em;
+    color: #f0f0f0;
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Imágenes de fondo específicas para cada página de detalle */
+#aluminio-hero { background-image: url('../img/productos-servicios/aluminio/Ventana-de-aluminio-finstral-Aluminios-Jutosa.jpg'); }
+#pvc-hero { background-image: url('../img/productos-servicios/Ventana-de-PVC-Aluminios-Jutosa.jpg'); }
+#puertas-especiales-hero { background-image: url('../img/productos-servicios/Puertas-Plegables-finstral-Aluminios-Jutosa.jpg'); }
+#cerramientos-hero { background-image: url('../img/productos-servicios/Cerramientos-finstral-Aluminios-Jutosa.jpg'); }
+#barandillas-hero { background-image: url('../img/productos-servicios/Barandillas-Aluminios-Jutosa.jpg'); }
+#guia-cerramientos-hero-bg { background-image: url('../img/trabajos/cerramientos/cerramiento-aluminio11.jpg'); margin-bottom: 20px; }
+
+
+/* Contenedor general de la página de detalle */
+.product-detail-page .page-title-section {
+    text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #1E73BE;
+}
+.product-detail-page .page-title-section h1 { font-size: 2.6em; color: #1E73BE; margin-bottom: 0; }
+.product-detail-page .page-title-section .subtitulo-seccion { font-size: 1.2em; color: #555; margin-top: 5px; }
 
 /* Sección de Introducción a la Familia de Productos */
-.intro-product-family {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-.intro-product-family .intro-content {
-    display: flex;
-    flex-wrap: wrap; /* Para que se ajuste en móvil */
-    gap: 30px;
-    align-items: flex-start; /* Alinear items arriba */
-    margin-bottom: 20px;
-}
-.intro-product-family .intro-image {
-    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
-    max-width: 350px; /* Límite para la imagen de intro */
-    height: auto;
-    border-radius: 6px;
-    border: 1px solid #eee;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer; /* Para el lightbox */
-}
-.intro-product-family .intro-text {
-    flex: 2 1 400px; /* Que el texto ocupe más espacio */
-}
-.intro-product-family .intro-text h2 {
-    font-size: 1.8em;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-.intro-product-family .intro-text p {
-    font-size: 1em;
-    line-height: 1.65;
-    color: #444;
-    margin-bottom: 12px;
-}
-.intro-product-family .additional-intro-text {
-    clear: both; /* Por si el float de la imagen anterior afecta */
-    padding-top: 20px;
-    margin-top: 20px;
-    border-top: 1px solid #e0e0e0;
-}
-.intro-product-family .additional-intro-text h3 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
-}
-.intro-product-family .additional-intro-text p {
-    font-size: 1em;
-    line-height: 1.65;
-    color: #444;
-}
+.intro-product-family { margin-bottom: 50px; }
+.intro-product-family .intro-content { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 30px; }
+.intro-product-family .intro-content.item-spacing-top { margin-top: 40px; }
+.intro-content.layout-imagen-izquierda .intro-image { order: 1; }
+.intro-content.layout-imagen-izquierda .intro-text { order: 2; padding-left: 25px;}
+.intro-content.layout-texto-izquierda .intro-text { order: 1; padding-right: 25px;}
+.intro-content.layout-texto-izquierda .intro-image { order: 2; }
+.intro-product-family .intro-image { flex: 1 1 40%; min-width: 280px; }
+.intro-product-family .intro-image img { width: 100%; height: auto; border-radius: 8px; border: 1px solid #dce3eb; box-shadow: 0 5px 15px rgba(0,0,0,0.08); cursor: pointer; }
+.intro-product-family .intro-text { flex: 1 1 55%; min-width: 300px; }
+.intro-product-family .intro-text h2 { font-size: 1.9em; color: #2c3e50; margin-top: 0; margin-bottom: 18px; line-height: 1.35; }
+.intro-product-family .intro-text h3 { font-size: 1.6em; color: #34495e; margin-top: 0; margin-bottom: 15px; line-height: 1.3; }
+.intro-product-family .intro-text p { font-size: 1.05em; line-height: 1.75; color: #555; margin-bottom: 18px; }
 
-/* Para la sección de perfiles clave en la página de PVC */
-.key-profiles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
-}
-.profile-summary {
-    flex: 1 1 300px; /* Permite 2 columnas si hay espacio */
-    display: flex;
-    gap: 15px;
-    align-items: flex-start;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 6px;
-    border: 1px solid #e9e9e9;
-}
-.profile-summary-image {
-    width: 100px; /* Ancho fijo para la imagen pequeña del perfil */
-    height: auto;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    flex-shrink: 0; /* Evita que la imagen se encoja */
-    cursor: pointer; /* Para el lightbox */
-}
-.profile-summary-text h4 {
-    font-size: 1.2em;
-    color: #1E73BE;
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-.profile-summary-text p {
-    font-size: 0.9em;
-    line-height: 1.5;
-    color: #555;
-}
+/* Estilos para la sección de perfiles clave (TOP 90 y TOP 72 en PVC) */
+.key-profiles-section { margin-top: 40px; margin-bottom: 40px; padding: 30px 20px; background-color: #f8f8f8; border-radius: 8px; }
+.key-profiles-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.key-profile-item { flex: 1 1 400px; max-width: 500px; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.07); text-align: center; border: 1px solid #e0e0e0; }
+.key-profile-item .key-profile-image { width: 100%; max-width: 250px; height: auto; margin: 0 auto 15px auto; border-radius: 4px; border: 1px solid #ddd; cursor: pointer; }
+.key-profile-item .key-profile-text h3 { font-size: 1.7em; color: #1E73BE; margin-bottom: 10px; }
+.key-profile-item .key-profile-text p { font-size: 0.95em; line-height: 1.6; color: #444; text-align: left; }
+.key-profile-item .key-profile-text p strong { color: #333; display: block; margin-bottom: 5px; }
 
 
-/* Sección de Línea de Productos */
-.product-line-section {
-    margin-bottom: 40px;
+/* Sección de Línea de Productos (Título General) y Tipos de Producto */
+.product-line-section, .product-types-section, .product-options-grid, .galeria-modelos-barandillas-detalle { margin-bottom: 30px; padding-top: 10px; }
+.product-line-section > .section-subtitle,
+.product-types-section > .section-subtitle-alt,
+.product-options-grid > .section-subtitle-alt,
+.galeria-modelos-barandillas-detalle > h2, /* Para el título de la galería de barandillas si usas h2 */
+.galeria-modelos-barandillas-detalle > h3 { /* Para el título de la galería de barandillas si usas h3 */
+    text-align: center; font-size: 2em; color: #1E73BE; margin-bottom: 40px; padding-bottom: 15px; border-bottom: 2px solid #1E73BE; display: inline-block; position: relative; left: 50%; transform: translateX(-50%);
 }
-.product-line-section > h2 { /* Título general de la línea de productos */
-    text-align: center;
-    font-size: 2em;
-    color: #1E73BE;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e0e0e0;
-}
-.product-series-title { /* Para "Serie TOP 90", "Serie TOP 72" */
-    font-size: 1.6em;
-    color: #333;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed #ccc;
-    font-style: italic;
-}
-.product-series-title:first-of-type { /* El primer título de serie no necesita tanto margen superior */
-    margin-top: 10px;
-}
+.product-series-title { font-size: 1.8em; color: #333; margin-top: 50px; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #ccc; text-align: left; }
+.product-series-title:first-of-type { margin-top: 20px; }
 
 
-.product-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    overflow: hidden; /* Para manejar floats internos si los hubiera */
+/* Estructura para product-item-v2 (Perfil | Ejemplo | Descripción) */
+.product-item-v2 { display: grid; grid-template-columns: 1fr 1.5fr 2fr; gap: 25px; align-items: flex-start; padding: 25px; margin-bottom: 40px; background-color: #fdfdfd; border-radius: 8px; border: 1px solid #e9eff5; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.product-item-v2 .product-image-perfil,
+.product-item-v2 .product-image-ejemplo { width: 100%; background-color: #f8f8f8; border-radius: 6px; border: 1px solid #e0e0e0; display: flex; align-items: center; justify-content: center; height: 240px; overflow: hidden; }
+.product-item-v2 .product-image-perfil img,
+.product-item-v2 .product-image-ejemplo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; cursor: pointer; }
+.product-item-v2 .product-text-descripcion h3,
+.product-item-v2 .product-text-descripcion h4 { font-size: 1.5em; color: #1E73BE; margin-top: 0; margin-bottom: 12px; }
+.product-item-v2 .product-text-descripcion p { font-size: 0.95em; line-height: 1.65; color: #444; margin-bottom: 0; }
+
+/* Estructura para .product-type-card (Imagen arriba, título y texto abajo - usado en Puertas Especiales) */
+.product-types-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+.product-type-card { background-color: #fdfdfd; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); overflow: hidden; border: 1px solid #e9eff5; padding: 25px; text-align: center; margin-bottom: 20px; }
+.product-type-card .product-type-image { margin-bottom: 20px; text-align: center; }
+.product-type-card .product-type-image img { width: 100%; max-width: 500px; height: auto; max-height: 350px; object-fit: cover; border-radius: 6px; border: 1px solid #e0e0e0; display: block; margin-left: auto; margin-right: auto; cursor: pointer; }
+.product-type-card .product-type-content h3 { font-size: 1.8em; color: #1E73BE; margin-top: 0; margin-bottom: 15px; text-align: center; }
+.product-type-card .product-type-content p { font-size: 1em; line-height: 1.7; color: #444; margin-bottom: 12px; text-align: left; }
+.product-type-card .product-type-content p:last-of-type { margin-bottom: 0; }
+
+
+/* Estilos para producto-feature (reutilizable imagen-texto alternado) */
+.producto-feature { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; margin-bottom: 40px; padding: 25px; background-color: #fdfdfd; border-radius: 8px; border: 1px solid #e9eff5; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.producto-feature.layout-imagen-izquierda .producto-feature-imagen { order: 1; }
+.producto-feature.layout-imagen-izquierda .producto-feature-texto { order: 2; padding-left: 15px; }
+.producto-feature.layout-texto-izquierda .producto-feature-texto { order: 1; padding-right: 15px; }
+.producto-feature.layout-texto-izquierda .producto-feature-imagen { order: 2; }
+.producto-feature-imagen { flex: 1 1 40%; min-width: 280px; }
+.producto-feature-imagen img { width: 100%; height: auto; border-radius: 6px; border: 1px solid #ddd; cursor:pointer; }
+.producto-feature-texto { flex: 1 1 55%; min-width: 300px; }
+.producto-feature-texto h2, /* Usado en la intro de Cerramientos y Barandillas */
+.producto-feature-texto h3 { font-size: 1.7em; color: #1E73BE; margin-top: 0; margin-bottom: 15px; }
+.producto-feature-texto p { line-height: 1.7; margin-bottom: 12px; color: #444; }
+.producto-feature-texto ul.lista-iconos-detalle { list-style: none; padding-left: 0; margin-top: 15px; }
+.lista-iconos-detalle li { margin-bottom: 12px; padding-left: 28px; position: relative; line-height: 1.6; color: #333; }
+.lista-iconos-detalle li i { color: #007bff; position: absolute; left: 0; top: 4px; font-size: 1.1em; width: 20px; text-align: center; }
+.lista-iconos-detalle li strong { color: #333; display: block; margin-bottom: 2px; }
+
+
+/* Estilos específicos para sub-secciones de Cerramientos y Barandillas */
+.options-grid-container { /* Cuadrícula 2x2 para tipos de cerramiento */
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; margin-bottom: 30px;
 }
-.product-item::after { /* Clearfix por si usas floats dentro (aunque flex es mejor) */
-    content: "";
-    clear: both;
-    display: table;
+@media (min-width: 600px) { .options-grid-container { grid-template-columns: repeat(2, 1fr); } }
+.option-card { padding: 20px; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 3px 8px rgba(0,0,0,0.05); display:flex; flex-direction:column; }
+.option-card img { width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 4px; margin-bottom:15px;}
+.option-card img:hover { opacity: 0.85; }
+.option-card-content { flex-grow: 1; text-align:center;}
+.option-card-content h3 { font-size: 1.3em; color: #007bff; margin-top: 0; margin-bottom: 10px; }
+.option-card-content p { font-size: 0.95em; line-height: 1.6; margin-bottom: 0px; text-align: left; }
+
+.cta-seccion-interna-detalle { text-align: center; padding: 35px 25px; background-color: #eef7ff; border-radius: 8px; margin: 40px 0; border-top: 3px solid #50C9F2; }
+.cta-seccion-interna-detalle h3 { font-size: 1.9em; color: #1E73BE; margin-top: 0; margin-bottom: 15px; }
+.cta-seccion-interna-detalle p { margin-bottom: 25px; font-size: 1.1em; color: #333; max-width: 700px; margin-left: auto; margin-right: auto; }
+.cta-seccion-interna-detalle .btn { background-color: #007bff; color: #ffffff; border-color: #007bff; padding: 12px 30px; font-size: 1.05em; }
+.cta-seccion-interna-detalle .btn:hover { background-color: #0056b3; border-color: #0056b3; }
+
+/* Guía para Elegir Cerramientos (en guia-cerramientos.html) */
+.guia-elegir-cerramiento-content { padding: 20px 0; }
+.guia-elegir-cerramiento-content .guia-header-main {
+    text-align: center; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid #ccc; background-color: #fff; /* Fondo claro para el header de la guía */ padding-top: 20px; border-radius: 8px; /* Opcional: 8px 8px 0 0; si es el primer elemento */
+}
+.guia-elegir-cerramiento-content .guia-header-main h2 { font-size: 2.2em; color: #1E73BE; margin-bottom: 5px; border-bottom:none; display:block; left:auto; transform:none;}
+.guia-elegir-cerramiento-content .guia-header-main h3 { font-size: 1.5em; color: #555; margin-top: 0; font-weight: normal; }
+.texto-introductorio-guia { text-align: center; max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1em; line-height: 1.7;}
+.guia-subseccion-detalle { margin-bottom: 35px; padding: 25px; background-color: #f9f9f9; border-radius: 6px; }
+.guia-subseccion-detalle:last-child { margin-bottom: 10px;}
+.guia-subseccion-detalle h4, #barandillas .guia-subseccion-detalle h2 { font-size: 1.6em; color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-top:0; margin-bottom: 20px; text-align:left; display:block; left:auto; transform:none; border-left:none; padding-left:0; }
+.guia-subseccion-detalle p { margin-bottom: 15px; line-height: 1.65; color: #444;}
+.guia-subseccion-detalle ul.lista-simple-columnas { list-style-type: none; padding-left: 0; margin-bottom: 15px; column-count: 2; column-gap: 20px; }
+.guia-subseccion-detalle ul.lista-simple-columnas li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+.guia-subseccion-detalle ul.lista-simple-columnas li::before { content: '·'; color: #007bff; position: absolute; left: 0; font-weight: bold; font-size: 1.4em; line-height: 1; }
+
+.donde-instalar-flex { display: flex; flex-wrap: wrap; gap: 25px; align-items: flex-start; }
+.donde-instalar-texto { flex: 1 1 55%; min-width: 280px; } /* Dar más espacio al texto */
+.donde-instalar-imagenes {
+    flex: 1 1 40%; min-width: 280px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; /* Ajustado gap */
+}
+.donde-instalar-imagenes img {
+    width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; flex-shrink:0;
 }
 
-.product-item .product-profile-image {
-    width: 120px; /* Ancho de la imagen pequeña del perfil */
-    float: left; /* Como en tu maqueta original */
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    cursor: pointer; /* Para el lightbox */
-}
+.tabla-comparativa-container { overflow-x: auto; margin: 25px 0; }
+.tabla-comparativa { border: 1px solid #555; border-collapse: collapse; min-width: 600px; width: 100%; font-size: 0.95em; }
+.tabla-comparativa th, .tabla-comparativa td { border: 1px solid #777; padding: 12px; text-align: center; }
+.tabla-comparativa th { background-color: #e9ecef; color: #333; font-weight: bold; }
+.tabla-comparativa tbody tr:nth-child(odd) { background-color: #f8f9fa; }
+.tabla-comparativa td:first-child { text-align: left; font-weight: bold; color: #025197; background-color: #f8f9fa; }
+.tabla-comparativa .grey { color: #cccccc; }
+.tabla-comparativa td span.stars { color: #367614; font-weight: bold; font-size: 1.3em; letter-spacing: 1px; }
 
-.product-item .product-description {
-    overflow: hidden; /* Para contener el float de la imagen */
-}
-.product-item .product-description h3, /* Para FIN-Project... */
-.product-item .product-description h4 { /* Para Top 90 Classic-line... */
-    font-size: 1.4em;
-    color: #1E73BE; /* Color principal para los nombres de producto */
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-.product-item .product-description p {
-    font-size: 0.95em;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 0; /* El artículo ya tiene margin-bottom */
-}
+.tipo-cerramiento-columnas { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+.tipo-cerramiento-columnas > div { flex: 1; min-width: 280px; }
+.tipo-cerramiento-columnas p strong { font-size: 1.1em; color: #333; display: block; margin-bottom: 8px; }
 
-.product-item .product-showcase-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 15px;
-    clear: both; /* Para asegurar que esté debajo del contenido flotante */
-    border: 1px solid #eee;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    cursor: pointer; /* Para el lightbox */
+/* Estilos para Galería de Modelos de Barandillas */
+.galeria-modelos-barandillas-detalle { margin-bottom: 40px; text-align: center; }
+.galeria-modelos-barandillas-detalle h2, /* Si usas H2 para el título de la galería */
+.galeria-modelos-barandillas-detalle h3 { /* O H3 */
+    font-size: 1.8em; color: #333; margin-bottom: 25px;
+    /* Si quieres el mismo estilo que otros section-subtitle-alt:
+    color: #1E73BE; padding-bottom: 15px; border-bottom: 2px solid #1E73BE; display: inline-block; position: relative; left: 50%; transform: translateX(-50%);
+    */
 }
+.image-grid-barandillas { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; background-color: #f9f9f9; padding: 20px; border-radius: 8px; }
+.image-grid-barandillas img { width: 156px; height: 143px; border: 1px solid #ddd; border-radius: 4px; object-fit: cover; cursor: pointer; transition: transform 0.2s ease; }
+.image-grid-barandillas img:hover { transform: scale(1.05); }
+
 
 /* Llamada a la acción al final de la página de detalle */
-.cta-product-detail {
-    text-align: center;
-    margin-top: 40px;
-    padding: 25px;
-    background-color: #f4faff;
-    border-radius: 8px;
-}
-.cta-product-detail p {
-    font-size: 1.15em;
-    margin-bottom: 0; /* El botón tendrá su propio margen si es necesario */
-}
-.cta-product-detail .btn { /* Hereda de style.css */
-    margin-top: 15px; /* Espacio si el p tiene texto */
-}
+.cta-product-detail { text-align: center; margin-top: 40px; padding: 30px 25px; background-color: #f0f6ff; border-radius: 8px; border-top: 3px solid #1E73BE; }
+.cta-product-detail p { font-size: 1.2em; margin-bottom: 0; color: #333; }
+.cta-product-detail .btn { margin-top: 20px; padding: 12px 30px; font-size: 1.05em; }
+.cta-product-detail .btn i { margin-right: 8px; }
 
 
 /* Media Queries para product-detail-page */
+@media (max-width: 992px) { 
+    .product-item-v2 {
+        grid-template-columns: 1fr 1.5fr; 
+        grid-template-areas: "perfil descripcion" "ejemplo descripcion";
+        align-items: center; 
+    }
+    .product-item-v2 .product-image-perfil { grid-area: perfil; height: 200px; }
+    .product-item-v2 .product-image-ejemplo { grid-area: ejemplo; height: 200px; margin-top: 0;}
+    .product-item-v2 .product-text-descripcion { grid-area: descripcion; }
+}
+
 @media (max-width: 768px) {
-    .product-detail-page .page-title-section h1 {
-        font-size: 2.2em;
+    .page-title-hero { padding: 70px 20px; }
+    .page-title-hero h1 { font-size: 2.4em; }
+
+    .intro-product-family .intro-content,
+    .producto-feature {
+        flex-direction: column; align-items: center; text-align: center;
     }
-    .intro-product-family .intro-content {
-        flex-direction: column; /* Apila imagen y texto de intro */
-        align-items: center; /* Centra la imagen cuando se apila */
+    .intro-product-family .intro-content .intro-image,
+    .producto-feature .producto-feature-imagen {
+        order: 0; margin-bottom: 20px; max-width: 90%; 
     }
-    .intro-product-family .intro-image {
-        max-width: 100%; /* Que la imagen ocupe el ancho disponible */
-        margin-bottom: 20px;
+    .intro-product-family .intro-content .intro-text,
+    .producto-feature .producto-feature-texto {
+        order: 0; padding-left: 10px; padding-right: 10px; text-align: left; 
     }
-    .intro-product-family .intro-text {
-        text-align: center; /* Centra el texto de introducción en móvil */
+    .intro-product-family .intro-text h2 { font-size: 1.7em; }
+    .intro-product-family .intro-text h3 { font-size: 1.4em; }
+    .producto-feature-texto h2, .producto-feature-texto h3 { text-align: center; }
+
+    .key-profiles-pvc, .profile-summary-pvc {
+        flex-direction: column; align-items: center; text-align: center;
     }
-    .key-profiles {
-        flex-direction: column; /* Apila los perfiles resumen */
+    .profile-summary-pvc img { margin-bottom: 10px; margin-right: 0; }
+
+    .product-line-section > .section-subtitle,
+    .product-types-section > .section-subtitle-alt,
+    .product-options-grid > .section-subtitle-alt,
+    .galeria-modelos-barandillas-detalle > h2,
+    .galeria-modelos-barandillas-detalle > h3 { font-size: 1.8em; }
+
+    .product-item-v2 {
+        grid-template-columns: 1fr; 
+        grid-template-areas: "perfil" "ejemplo" "descripcion";
+        text-align: center; 
     }
-    .profile-summary {
-        flex-direction: column; /* Apila imagen y texto dentro del perfil resumen */
-        align-items: center;
-        text-align: center;
+    .product-item-v2 .product-image-perfil,
+    .product-item-v2 .product-image-ejemplo {
+        max-width: 80%; margin: 0 auto 15px auto; height: 220px; 
     }
-    .profile-summary-image {
-        margin-bottom: 10px;
-        margin-right: 0; /* Sin margen derecho cuando está apilado */
+    .product-item-v2 .product-text-descripcion h3,
+    .product-item-v2 .product-text-descripcion h4 { font-size: 1.4em; }
+    .product-item-v2 .product-text-descripcion p { font-size: 0.95em; text-align: left; }
+
+    .product-types-grid { grid-template-columns: 1fr; }
+    .options-grid-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    @media (min-width: 600px) and (max-width: 768px) {
+         .options-grid-container { grid-template-columns: repeat(2, 1fr); }
     }
 
-    .product-item .product-profile-image {
-        float: none; /* Quita el float en móvil */
-        display: block;
-        margin: 0 auto 15px auto; /* Centra la imagen del perfil */
-        max-width: 150px; /* Limita el tamaño */
-    }
-    .product-item .product-description {
-        text-align: center; /* Centra la descripción en móvil */
-    }
+    /* Cerramientos y Barandillas en tablet */
+    .guia-elegir-cerramiento-content .guia-header-main h2 { font-size: 1.8em; }
+    .guia-subseccion-detalle h4, #barandillas .guia-subseccion-detalle h2 { font-size: 1.3em; }
+    .image-grid-barandillas img { width: calc(33.33% - 10px); height: auto; } 
+    .donde-instalar-flex { flex-direction: column; }
+    .donde-instalar-imagenes { margin-top: 20px; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); }
+    .donde-instalar-imagenes img { height: 80px; }
+    .guia-subseccion-detalle ul.lista-simple-columnas { column-count: 1; }
 }
 
 @media (max-width: 480px) {
-    .product-detail-page .page-title-section h1 {
-        font-size: 1.9em;
-    }
+    .page-title-hero { padding: 60px 15px; }
+    .page-title-hero h1 { font-size: 2em; }
+
     .intro-product-family .intro-text h2,
-    .intro-product-family .additional-intro-text h3 {
-        font-size: 1.4em;
+    .intro-product-family .intro-text h3,
+    .producto-feature-texto h2, .producto-feature-texto h3 {
+        font-size: 1.5em; 
     }
-    .product-line-section > h2 {
-        font-size: 1.7em;
-    }
-    .product-series-title {
-        font-size: 1.4em;
-    }
-    .product-item .product-description h3,
-    .product-item .product-description h4 {
-        font-size: 1.2em;
-    }
+    .product-line-section > .section-subtitle,
+    .product-types-section > .section-subtitle-alt,
+    .product-options-grid > .section-subtitle-alt,
+    .galeria-modelos-barandillas-detalle > h2,
+    .galeria-modelos-barandillas-detalle > h3 { font-size: 1.6em; }
+
+    .product-item-v2 .product-text-descripcion h3,
+    .product-item-v2 .product-text-descripcion h4 { font-size: 1.3em; }
+    .product-item-v2 .product-image-perfil,
+    .product-item-v2 .product-image-ejemplo { height: 200px; }
+    
+    .product-type-card .product-type-content h3 { font-size: 1.5em; }
+
+    /* Cerramientos y Barandillas en móvil pequeño */
+    .options-grid-container { grid-template-columns: 1fr; }
+    .guia-elegir-cerramiento-content .guia-header-main h2 { font-size: 1.6em; }
+    .guia-subseccion-detalle h4, #barandillas .guia-subseccion-detalle h2 { font-size: 1.2em; }
+    .image-grid-barandillas img { width: calc(50% - 8px); } 
+    .donde-instalar-imagenes { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));}
+    .donde-instalar-imagenes img { height: 70px; border-width: 2px; }
 }
