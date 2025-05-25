@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Jutosa Web (TFG Marcos)</title> </head>
+    <title>Aluminios Jutosa - Carpintería de Aluminio y PVC en Parla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css"> </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/NuevoLogoJutosa.png" alt="Logo Aluminios Jutosa" id="logo-img">
-                </a>
-            </div>
-            <nav id="main-nav"> <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
+            <div class="logo"><a href="index.html"><img src="img/NuevoLogojutosa.png" alt="Logo Aluminios Jutosa" id="logo-img"></a></div>
+            <nav id="main-nav">
+                <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
                 <ul id="menu-list">
                     <li><a href="index.html" class="nav-link active">Inicio</a></li>
                     <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
@@ -31,37 +26,258 @@
     </header>
 
     <main>
-        <div class="container">
-            <h1>Bienvenido a la Nueva Web de Jutosa</h1>
-            <p>Esta es la página de inicio. Próximamente con más contenido.</p>
+        <section class="hero-slider">
+            <div class="slide active">
+                <img src="img/productos-servicios/aluminio/Ventana-de-aluminio-finstral-Aluminios-Jutosa.jpg" alt="Proyectos de carpintería de aluminio">
+                <div class="slide-caption">
+                    <h2>Soluciones Innovadoras en Aluminio</h2>
+                    <p>Calidad y diseño para tus ventanas y puertas.</p>
+                    <a href="ventanas-aluminio-detalle.html" class="btn btn-primario">Ver Más</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/productos-servicios/Ventana-de-PVC-Aluminios-Jutosa.jpg" alt="Eficiencia energética con PVC">
+                <div class="slide-caption">
+                    <h2>Máximo Aislamiento con PVC</h2>
+                    <p>Confort y ahorro energético para tu hogar.</p>
+                     <a href="ventanas-pvc-detalle.html" class="btn btn-primario">Descubre Más</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/productos-servicios/Cerramientos-finstral-Aluminios-Jutosa.jpg" alt="Cerramientos a medida">
+                <div class="slide-caption">
+                    <h2>Cerramientos a Medida</h2>
+                    <p>Disfruta de tus espacios todo el año.</p>
+                    <a href="cerramientos-detalle.html" class="btn btn-primario">Explora Opciones</a>
+                </div>
+            </div>
+            <button class="slider-control prev" aria-label="Anterior">&#10094;</button>
+            <button class="slider-control next" aria-label="Siguiente">&#10095;</button>
+            <div class="slider-dots">
+                </div>
+        </section>
+
+        <div class="container page-section">
+            <section class="bienvenida-resumen text-center">
+                <h2>Bienvenidos a Aluminios Jutosa</h2>
+                <p class="lead">Con más de 25 años de experiencia, en Aluminios Jutosa transformamos tus ideas en realidades de aluminio y PVC. Desde nuestros inicios en Parla, nos hemos dedicado a ofrecer soluciones de carpintería metálica que combinan calidad, diseño y la última tecnología para el confort y la seguridad de tu hogar o negocio.</p>
+                <a href="quienes-somos.html" class="btn btn-secundario">Conócenos Mejor <i class="fas fa-users"></i></a>
+            </section>
+
+            <section class="servicios-destacados page-section">
+                <h2 class="section-title text-center">Nuestros Servicios Principales</h2>
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <div class="servicio-icon"><i class="fas fa-window-maximize"></i></div>
+                        <h3>Ventanas y Puertas de Aluminio</h3>
+                        <p>Durabilidad, diseño y versatilidad con la mejor tecnología en aislamiento.</p>
+                        <a href="ventanas-aluminio-detalle.html" class="servicio-link">Saber más &rarr;</a>
+                    </div>
+                    <div class="servicio-card">
+                        <div class="servicio-icon"><i class="fab fa-pvc"></i></div> <h3>Ventanas y Puertas de PVC</h3>
+                        <p>Máximo aislamiento y eficiencia energética con acabados de alta calidad.</p>
+                        <a href="ventanas-pvc-detalle.html" class="servicio-link">Saber más &rarr;</a>
+                    </div>
+                    <div class="servicio-card">
+                        <div class="servicio-icon"><i class="fas fa-project-diagram"></i></div> <h3>Puertas Correderas y Plegables</h3>
+                        <p>Soluciones que conectan tus espacios con elegancia y funcionalidad.</p>
+                        <a href="puertas-especiales-detalle.html" class="servicio-link">Saber más &rarr;</a>
+                    </div>
+                    <div class="servicio-card">
+                        <div class="servicio-icon"><i class="fas fa-archway"></i></div>
+                        <h3>Cerramientos</h3>
+                        <p>Ampliamos y protegemos tus terrazas, porches y balcones con estilo.</p>
+                        <a href="cerramientos-detalle.html" class="servicio-link">Saber más &rarr;</a>
+                    </div>
+                     <div class="servicio-card">
+                        <div class="servicio-icon"><i class="fas fa-border-all"></i></div> <h3>Barandillas</h3>
+                        <p>Seguridad y diseño en barandillas de aluminio, cristal y otros materiales.</p>
+                        <a href="barandillas-detalle.html" class="servicio-link">Saber más &rarr;</a>
+                    </div>
+                </div>
+                 <div class="text-center" style="margin-top: 30px;">
+                    <a href="productos-servicios.html" class="btn btn-primario">Ver Todos los Productos y Servicios</a>
+                </div>
+            </section>
+
+            <section class="proyectos-destacados page-section">
+                <h2 class="section-title text-center">Proyectos que Inspiran</h2>
+                <div class="proyectos-grid">
+                    <div class="proyecto-item">
+                        <img src="img/trabajos/cerramientos/cerramiento-aluminio1.jpg" alt="Proyecto Destacado 1: Cerramiento" class="image-lightboxable" loading="lazy">
+                    </div>
+                    <div class="proyecto-item">
+                        <img src="img/trabajos/ventanas-aluminio/ventana-oscilobatiente-aluminio.jpg" alt="Proyecto Destacado 2: Ventana Aluminio" class="image-lightboxable" loading="lazy">
+                    </div>
+                    <div class="proyecto-item">
+                        <img src="img/trabajos/pvc/puerta-PVC.jpg" alt="Proyecto Destacado 3: Puerta PVC" class="image-lightboxable" loading="lazy">
+                    </div>
+                     <div class="proyecto-item">
+                        <img src="img/trabajos/barandillas/barandilla-aluminio1.jpg" alt="Proyecto Destacado 4: Barandilla" class="image-lightboxable" loading="lazy">
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 30px;">
+                    <a href="nuestros-trabajos.html" class="btn btn-secundario">Ver Galería Completa <i class="fas fa-images"></i></a>
+                </div>
+            </section>
+
+            <section class="testimonios-seccion page-section">
+                <h2 class="section-title text-center">Lo que Dicen Nuestros Clientes</h2>
+                <div class="testimonios-grid">
+                    <article class="testimonio-card">
+                        <p class="testimonio-texto">"¡Un trabajo impecable y muy profesionales! Transformaron nuestra terraza con un cerramiento de aluminio y ahora podemos disfrutarla todo el año. Totalmente recomendables."</p>
+                        <p class="testimonio-autor">- Ana G., Parla</p>
+                    </article>
+                    <article class="testimonio-card">
+                        <p class="testimonio-texto">"Cambiamos todas las ventanas de casa por unas de PVC con Aluminios Jutosa y no podemos estar más contentos. El aislamiento es fantástico y el trato fue excelente."</p>
+                        <p class="testimonio-autor">- Carlos M., Fuenlabrada</p>
+                    </article>
+                    <article class="testimonio-card">
+                        <p class="testimonio-texto">"Necesitábamos una puerta de entrada segura y con buen diseño. Nos asesoraron de maravilla y el resultado ha superado nuestras expectativas. ¡Grandes profesionales!"</p>
+                        <p class="testimonio-autor">- M. López, Getafe</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="cta-final page-section text-center">
+                <h2>¿Listo para Empezar tu Proyecto con Nosotros?</h2>
+                <p class="lead">Contacta con nuestro equipo de expertos para recibir asesoramiento personalizado y un presupuesto sin compromiso. En Aluminios Jutosa, estamos para ayudarte a construir tus ideas.</p>
+                <a href="contacto.html" class="btn btn-primario btn-lg"><i class="fas fa-paper-plane"></i> Solicita tu Presupuesto Ahora</a>
+            </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+             <div class="footer-content">
                 <div class="social-media">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa">
-                        <img src="img/LogoInstagram.png" alt="Instagram">
-                    </a>
-                    <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa">
-                        <img src="img/LogoFacebook.png" alt="Facebook">
-                    </a>
-                    <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa">
-                        <img src="img/LogoTiktok.png" alt="TikTok">
-                    </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa">
-                        <img src="img/LogoLinkedin.png" alt="LinkedIn">
-                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa"><img src="img/LogoInstagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa"><img src="img/LogoFacebook.png" alt="Facebook"></a>
+                    <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa"><img src="img/LogoTiktok.png" alt="TikTok"></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa"><img src="img/LogoLinkedin.png" alt="LinkedIn"></a>
                 </div>
-                <p class="copyright">&copy; <span id="current-year"></span> Jutosa TFG - Marcos. Todos los derechos reservados.</p>
+                <p class="copyright">© <span id="current-year"></span> Jutosa - Marcos. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-cerrar">&times;</span>
+        <img class="lightbox-contenido" id="lightbox-imagen" alt="Imagen ampliada">
+        <div id="lightbox-caption"></div>
+    </div>
+
     <script src="js/main.js"></script>
     <script>
-        // Pequeño script para actualizar el año del copyright automáticamente
-        document.getElementById("current-year").textContent = new Date().getFullYear();
+        // Script para el año del copyright (si no está en main.js)
+        if (document.getElementById("current-year")) {
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        }
+
+        // Lógica del Carrusel (Hero Slider)
+        const slides = document.querySelectorAll('.hero-slider .slide');
+        const nextButton = document.querySelector('.hero-slider .next');
+        const prevButton = document.querySelector('.hero-slider .prev');
+        const dotsContainer = document.querySelector('.hero-slider .slider-dots');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function createDots() {
+            if (!dotsContainer) return;
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('dot');
+                dot.setAttribute('aria-label', `Ir a diapositiva ${index + 1}`);
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    resetInterval();
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+        
+        function updateDots() {
+            if (!dotsContainer) return;
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function goToSlide(slideIndex) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (slideIndex + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            updateDots();
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, 5000); // 5 segundos
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startSlideShow();
+        }
+
+        if (slides.length > 0) {
+            createDots();
+            if (nextButton && prevButton) {
+                nextButton.addEventListener('click', () => {
+                    nextSlide();
+                    resetInterval();
+                });
+                prevButton.addEventListener('click', () => {
+                    prevSlide();
+                    resetInterval();
+                });
+            }
+            startSlideShow(); // Iniciar pase automático
+        }
+
+        // Lógica del Lightbox (si es necesaria en esta página para "Proyectos Destacados")
+        // Si el script del lightbox ya está en main.js y es global, no necesitas repetirlo aquí.
+        // Solo asegúrate de que las imágenes de "Proyectos Destacados" tengan la clase .image-lightboxable
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImage = document.getElementById('lightbox-imagen');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeLightboxButton = document.querySelector('.lightbox .lightbox-cerrar');
+        const imagesToLightbox = document.querySelectorAll('.image-lightboxable'); // Asegúrate que las imágenes de proyectos destacados tengan esta clase
+
+        if (lightboxModal && lightboxImage && closeLightboxButton && imagesToLightbox.length > 0) {
+            imagesToLightbox.forEach(image => {
+                image.style.cursor = 'pointer'; 
+                image.addEventListener('click', function() {
+                    lightboxModal.style.display = 'block';
+                    lightboxImage.src = this.src;
+                    lightboxCaption.innerHTML = this.alt;
+                    document.body.style.overflow = 'hidden'; 
+                });
+            });
+
+            if(closeLightboxButton) {
+                closeLightboxButton.addEventListener('click', function() {
+                    lightboxModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            lightboxModal.addEventListener('click', function(event) {
+                if (event.target === lightboxModal) { 
+                    lightboxModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
     </script>
 </body>
 </html>
