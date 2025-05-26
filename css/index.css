@@ -1,8 +1,8 @@
 /* css/index.css - Estilos para la Página de Inicio */
 
-/* Estilos Generales de Sección */
+/* Estilos Generales de Sección en la Página de Inicio */
 .page-section {
-    padding: 50px 0;
+    padding: 60px 0;
     border-bottom: 1px solid #f0f0f0;
 }
 .page-section:last-of-type {
@@ -11,314 +11,171 @@
 .section-title {
     font-size: 2.4em;
     color: #1E73BE;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+    text-align: center;
 }
-.section-title::after { /* Línea decorativa debajo del título */
+.section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: #50C9F2; /* Color de acento */
+    width: 100px;
+    height: 4px;
+    background-color: #50C9F2;
 }
-.text-center {
-    text-align: center;
-}
-.lead { /* Párrafo introductorio o destacado */
-    font-size: 1.15em;
-    color: #555;
-    line-height: 1.7;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 25px;
+.text-center { text-align: center; }
+.lead { font-size: 1.2em; color: #444; line-height: 1.75; max-width: 780px; margin-left: auto; margin-right: auto; margin-bottom: 30px; }
+
+/* Wrapper para el contenido después del hero */
+.main-content-wrapper {
+    position: relative; 
+    z-index: 2; 
+    background-color: #fff;
+    padding-top: 40px; /* Separación entre hero y primera sección */
 }
 
 
 /* 1. Hero Slider */
-.hero-slider {
+.hero-slider.full-viewport-hero {
     position: relative;
     width: 100%;
-    max-height: 550px; /* Ajusta la altura máxima del slider */
+    height: 85vh; /* ALTURA RECOMENDADA (85% del alto de la ventana) - AJUSTA ESTE VALOR */
+    /* max-height: 700px; */ /* O una altura máxima si prefieres */
     overflow: hidden;
-    background-color: #333; /* Fondo mientras cargan las imágenes */
+    background-color: #222; 
+    z-index: 1; 
 }
-.hero-slider .slide {
-    display: none; /* Ocultos por defecto, JS mostrará el activo */
-    width: 100%;
-    height: 550px; /* Misma altura que el contenedor */
+/* ... (resto de estilos de .hero-slider .slide, .slide-caption, .slider-control, .slider-dots como en la respuesta anterior,
+       asegurando que .slide img tenga object-fit: cover y object-position: center center) ... */
+.hero-slider.full-viewport-hero .slide {
+    display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1s ease-in-out;
 }
-.hero-slider .slide.active {
-    display: block;
-    animation: fadeInHero 1s ease-in-out;
-}
-@keyframes fadeInHero {
-    from { opacity: 0.7; }
-    to { opacity: 1; }
-}
-.hero-slider .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el slide */
-    object-position: center center;
-}
-.hero-slider .slide-caption {
-    position: absolute;
-    bottom: 10%; /* Posición del texto */
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.55); /* Fondo semitransparente para legibilidad */
-    padding: 20px 30px;
-    border-radius: 8px;
-    max-width: 90%;
-    width: auto; /* Ajusta el ancho al contenido */
-    min-width: 300px; /* Ancho mínimo */
-}
-.hero-slider .slide-caption h2 {
-    font-size: 2.2em;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #fff; /* Heredado pero para asegurar */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-}
-.hero-slider .slide-caption p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-.hero-slider .slide-caption .btn { /* Botón dentro del carrusel */
-    font-size: 1em;
-    padding: 10px 25px;
-}
-
-.slider-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    cursor: pointer;
-    font-size: 1.5em;
-    z-index: 10;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-.slider-control:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-.slider-control.prev { left: 15px; }
-.slider-control.next { right: 15px; }
-
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-}
-.slider-dots .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.slider-dots .dot.active,
-.slider-dots .dot:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-}
+.hero-slider.full-viewport-hero .slide.active { display: block; opacity: 1; z-index: 1; }
+.hero-slider.full-viewport-hero .slide img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.hero-slider.full-viewport-hero .slide-caption { position: absolute; bottom: 12%; left: 50%; transform: translateX(-50%); color: #fff; text-align: center; background-color: rgba(0, 0, 0, 0.6); padding: 25px 40px; border-radius: 8px; max-width: 90%; width: auto; min-width: 320px; z-index: 2; }
+.hero-slider.full-viewport-hero .slide-caption h2 { font-size: 2.5em; margin-top: 0; margin-bottom: 15px; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+.hero-slider.full-viewport-hero .slide-caption p { font-size: 1.2em; margin-bottom: 25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.hero-slider.full-viewport-hero .slide-caption .btn { font-size: 1.05em; padding: 12px 30px; }
+.slider-control { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.35); color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 1.8em; z-index: 4; border-radius: 5px; transition: background-color 0.3s ease; }
+.slider-control:hover { background-color: rgba(0, 0, 0, 0.6); }
+.slider-control.prev { left: 20px; }
+.slider-control.next { right: 20px; }
+.slider-dots { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 4; }
+.slider-dots .dot { width: 14px; height: 14px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.4); border: 2px solid rgba(255, 255, 255, 0.6); cursor: pointer; transition: background-color 0.3s ease, border-color 0.3s ease; }
+.slider-dots .dot.active, .slider-dots .dot:hover { background-color: rgba(255, 255, 255, 0.9); border-color: #fff; }
 
 
 /* 2. Bienvenida / Quiénes Somos Resumen */
 .bienvenida-resumen {
-    padding: 40px 20px;
-    background-color: #f9f9f9; /* Fondo ligero para esta sección */
+    padding: 60px 25px; 
+    background-image: url('../img/nueva-nave/nave-nueva-vista-frontal-fuera.jpg');
+    background-size: cover;
+    background-position: center top; /* Prioriza la parte SUPERIOR de la imagen */
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff; 
     border-radius: 8px;
+    margin-top: 0; 
 }
-.bienvenida-resumen h2 {
-    font-size: 2.2em; /* Ligeramente más pequeño que el .section-title general */
-    color: #1E73BE;
-    margin-bottom: 20px;
+.bienvenida-resumen::before { 
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(30, 50, 80, 0.70); border-radius: inherit; z-index: 1;
 }
-.bienvenida-resumen .btn.btn-secundario {
-    margin-top: 15px;
-}
+.bienvenida-resumen .bienvenida-content { position: relative; z-index: 2; }
+.bienvenida-resumen h2 { font-size: 2.3em; color: #fff; margin-bottom: 20px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.bienvenida-resumen .lead { color: #e8e8e8; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+.bienvenida-resumen .btn.btn-secundario { margin-top: 20px; background-color: rgba(255,255,255,0.15); border-color: #fff; color: #fff; }
+.bienvenida-resumen .btn.btn-secundario:hover { background-color: #fff; color: #1E73BE; }
 
 
 /* 3. Servicios Destacados */
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
+.servicios-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 .servicio-card {
-    background-color: #fff;
-    padding: 30px 25px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #eef2f7;
+    background-color: #fff; padding: 30px 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.07); border: 1px solid #eef2f7; flex-grow: 0; flex-shrink: 0;
+    flex-basis: calc(33.333% - 21px); /* Para 3 en fila (30px gap -> (30*2)/3 = 20px) */
+    min-width: 280px; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.servicio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-.servicio-card .servicio-icon {
-    font-size: 2.8em; /* Tamaño del icono */
-    color: #1E73BE; /* Color primario */
-    margin-bottom: 20px;
-    line-height: 1;
-}
-.servicio-card h3 {
-    font-size: 1.4em;
-    color: #333;
-    margin-bottom: 10px;
-}
-.servicio-card p {
-    font-size: 0.95em;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-.servicio-card .servicio-link {
-    color: #1E73BE;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 0.9em;
-}
-.servicio-card .servicio-link:hover {
-    color: #50C9F2;
-    text-decoration: underline;
-}
+.servicio-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.servicio-card .servicio-icon { font-size: 2.8em; color: #1E73BE; margin-bottom: 20px; line-height: 1; }
+.servicio-card h3 { font-size: 1.4em; color: #333; margin-bottom: 10px; }
+.servicio-card p { font-size: 0.95em; color: #555; line-height: 1.6; margin-bottom: 15px; flex-grow: 1; }
+.servicio-card .servicio-link { color: #1E73BE; font-weight: bold; text-decoration: none; font-size: 0.9em; margin-top: auto; }
+.servicio-card .servicio-link:hover { color: #50C9F2; text-decoration: underline; }
 
 
 /* 4. Proyectos Destacados */
-.proyectos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-.proyecto-item img {
-    width: 100%;
-    height: 250px; /* Altura fija para las imágenes de proyectos destacados */
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    cursor: pointer; /* Para el lightbox */
-}
-.proyecto-item img:hover {
-    transform: scale(1.03);
-    opacity: 0.85;
-}
+.proyectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+@media (min-width: 992px) { .proyectos-grid { grid-template-columns: repeat(3, 1fr); } }
+.proyecto-item img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, opacity 0.3s ease; cursor: pointer; }
+.proyecto-item img:hover { transform: scale(1.03); opacity: 0.85; }
 
 
-/* 5. Testimonios */
-.testimonios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
+/* 5. Testimonios (Carrusel de 1 en 1) */
+.testimonial-slider-container { position: relative; max-width: 650px; margin: 0 auto; overflow: hidden; padding: 0 60px; /* Espacio para flechas más grandes */ }
+.testimonial-slides { display: flex; transition: transform 0.5s ease-in-out; /* Ancho total se pone con JS */ }
 .testimonio-card {
-    background-color: #f4faff; /* Fondo azul muy claro */
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 5px solid #50C9F2; /* Acento de color */
+    background-color: #f4faff; padding: 30px; border-radius: 8px; border-left: 5px solid #50C9F2; 
+    box-sizing: border-box; flex-shrink: 0; /* Importante para que no se encojan */
+    /* El JS se encargará del width de cada card (100% del contenedor visible) */
 }
-.testimonio-card .testimonio-texto {
-    font-style: italic;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 25px; /* Espacio para la comilla */
-}
+.testimonio-rating { color: #FFD700; margin-bottom: 10px; font-size: 1.1em; text-align: center; }
+.testimonio-card .testimonio-texto { font-style: italic; color: #444; line-height: 1.65; margin-bottom: 15px; position: relative; padding-left: 30px; }
 .testimonio-card .testimonio-texto::before {
-    content: '\f10d'; /* Icono de comilla izquierda de Font Awesome */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: -5px;
-    font-size: 1.5em;
-    color: #50C9F2;
-    opacity: 0.7;
+    content: '\f10d'; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: -5px; font-size: 1.8em; color: #50C9F2; opacity: 0.7;
 }
-.testimonio-card .testimonio-autor {
-    font-weight: bold;
-    color: #1E73BE;
-    text-align: right;
-    font-size: 0.95em;
+.testimonio-card .testimonio-autor { font-weight: bold; color: #1E73BE; text-align: right; font-size: 0.95em; }
+
+.testimonial-slider-control {
+    position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(30, 115, 190, 0.5); color: white; border: none; padding: 12px 18px; /* Aumentado */ cursor: pointer; font-size: 1.6em; /* Aumentado */ z-index: 10; border-radius: 50%; transition: background-color 0.3s ease;
 }
+.testimonial-slider-control:hover { background-color: rgba(30, 115, 190, 0.8); }
+.testimonial-slider-control.testimonial-prev { left: 10px; }
+.testimonial-slider-control.testimonial-next { right: 10px; }
 
 
 /* 6. Llamada a la Acción Final */
-.cta-final {
-    background-color: #2c3e50; /* Un fondo oscuro para destacar */
-    color: #fff;
-    padding: 60px 20px;
-    border-radius: 8px; /* Opcional: si quieres redondear esta sección */
-}
-.cta-final h2 {
-    color: #fff;
-    font-size: 2.3em;
-    margin-bottom: 15px;
-}
-.cta-final .lead { /* Párrafo en la CTA final */
-    color: #e0e0e0;
-    margin-bottom: 30px;
-}
-.cta-final .btn-lg { /* Clase para un botón más grande */
-    padding: 15px 35px;
-    font-size: 1.15em;
-}
+.cta-final { background-color: #2c3e50; color: #fff; padding: 60px 25px; border-radius: 0; margin-top: 20px; }
+.cta-final h2 { color: #fff; font-size: 2.3em; margin-bottom: 15px; }
+.cta-final .lead { color: #e0e0e0; margin-bottom: 30px; }
 
 
-/* Media Queries para la Página de Inicio */
+/* Media Queries para la Página de Inicio (Ajustes) */
+@media (max-width: 992px) { /* Tabletas */
+    .servicios-grid .servicio-card { flex-basis: calc(50% - 15px); }
+    .testimonial-slider-container { padding: 0 40px; }
+}
 @media (max-width: 768px) {
     .section-title { font-size: 2em; }
-    .hero-slider, .hero-slider .slide { height: 450px; } /* Slider más bajo en tablet */
-    .hero-slider .slide-caption h2 { font-size: 1.8em; }
-    .hero-slider .slide-caption p { font-size: 1em; margin-bottom: 15px; }
+    .hero-slider.full-viewport-hero, .hero-slider.full-viewport-hero .slide { height: 75vh; }
+    .hero-slider.full-viewport-hero .slide-caption h2 { font-size: 1.8em; }
+    .hero-slider.full-viewport-hero .slide-caption p { font-size: 1em; margin-bottom: 15px; }
     .slider-control { padding: 10px 15px; font-size: 1.3em;}
-
     .bienvenida-resumen h2 { font-size: 1.9em; }
-    .servicios-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     .servicio-card h3 { font-size: 1.3em; }
-    .proyectos-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } /* 2 columnas en tablet */
-    .proyecto-item img { height: 200px; }
-    .testimonios-grid { grid-template-columns: 1fr; } /* Testimonios en una columna en tablet */
+    .proyecto-item img { height: 220px; }
     .cta-final h2 { font-size: 2em; }
 }
-
 @media (max-width: 480px) {
     .page-section { padding: 40px 0; }
     .section-title { font-size: 1.7em; margin-bottom: 30px; }
-    .hero-slider, .hero-slider .slide { height: 350px; } /* Slider aún más bajo en móvil */
-    .hero-slider .slide-caption { padding: 15px 20px; bottom: 8%; }
-    .hero-slider .slide-caption h2 { font-size: 1.5em; margin-bottom: 8px; }
-    .hero-slider .slide-caption p { font-size: 0.9em; margin-bottom: 12px; }
-    .hero-slider .slide-caption .btn { font-size: 0.9em; padding: 8px 18px; }
+    .hero-slider.full-viewport-hero, .hero-slider.full-viewport-hero .slide { height: 65vh; } 
+    .hero-slider.full-viewport-hero .slide-caption { padding: 15px 20px; bottom: 8%; }
+    .hero-slider.full-viewport-hero .slide-caption h2 { font-size: 1.5em; margin-bottom: 8px; }
+    .hero-slider.full-viewport-hero .slide-caption p { font-size: 0.9em; margin-bottom: 12px; }
+    .hero-slider.full-viewport-hero .slide-caption .btn { font-size: 0.9em; padding: 8px 18px; }
     .slider-dots { bottom: 10px; }
     .slider-dots .dot { width: 10px; height: 10px; }
-    
     .bienvenida-resumen h2 { font-size: 1.7em; }
     .lead { font-size: 1.05em; }
-    .servicios-grid { grid-template-columns: 1fr; } /* 1 columna en móvil */
+    .servicios-grid .servicio-card { flex-basis: 100%; }
     .proyectos-grid { grid-template-columns: 1fr; }
+    .proyecto-item img { height: 200px; }
     .cta-final h2 { font-size: 1.8em; }
     .cta-final .btn-lg { padding: 12px 25px; font-size: 1em; }
+    .testimonial-slider-container { padding: 0 10px; max-width: 100%;}
+    .testimonial-slider-control { padding: 8px 12px; font-size: 1.2em;}
+    .testimonial-slider-control.testimonial-prev { left: 0px; }
+    .testimonial-slider-control.testimonial-next { right: 0px; }
 }
