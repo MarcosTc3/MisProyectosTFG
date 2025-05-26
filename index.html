@@ -63,7 +63,8 @@
         <div class="slider-dots"></div>
     </section>
 
-    <main class="main-content-wrapper"> <div class="container"> 
+    <main class="main-content-wrapper">
+        <div class="container"> 
             <section class="bienvenida-resumen text-center page-section">
                 <div class="bienvenida-content">
                     <h2>Bienvenidos a Aluminios Jutosa</h2>
@@ -199,48 +200,7 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content-wrapper">
-                <div class="footer-column" id="footer-tienda">
-                    <h4><i class="fas fa-store icon"></i> Tienda y Exposición</h4>
-                    <p>C/ Mª Cristina 8, Post.<br>28982 Parla (Madrid)</p>
-                    <p><i class="fas fa-phone icon"></i> <a href="tel:+34916985250">91 698 52 50</a></p>
-                    <p><i class="fas fa-mobile-alt icon"></i> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a></p>
-                    <p><i class="fas fa-envelope icon"></i> <a href="mailto:info@aluminiosjutosa.com">info@aluminiosjutosa.com</a></p>
-                    <p><i class="fas fa-clock icon"></i> Horario Tienda:<br>L-V: 9:00-14:00 y 17:00-20:00<br>
-                    (Sábados: contactar previamente)</p>
-                </div>
-
-                <div class="footer-column" id="footer-fabrica">
-                    <h4><i class="fas fa-industry icon"></i> Fábrica</h4>
-                    <p>C/ Agustín de Betancourt, 30<br>28984 Parla (Madrid)</p>
-                    <p><i class="fas fa-phone icon"></i> <a href="tel:+34916644432">91 664 44 32</a></p>
-                    <p><i class="fas fa-mobile-alt icon"></i> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a> (Móviles compartidos)</p>
-                    <p><i class="fas fa-envelope icon"></i> <a href="mailto:info@aluminiosjutosa.com">info@aluminiosjutosa.com</a></p>
-                    <p><i class="fas fa-clock icon"></i> Horario Fábrica:<br>L-J: 8:00-14:00 y 15:30-19:30<br>
-                    (Viernes: consultar/cita previa)</p>
-                </div>
-
-                <div class="footer-column" id="footer-social">
-                    <h4><i class="fas fa-share-alt icon"></i> Síguenos</h4>
-                    <div class="social-media">
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa"><img src="img/LogoInstagram.png" alt="Instagram"></a>
-                        <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa"><img src="img/LogoFacebook.png" alt="Facebook"></a>
-                        <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa"><img src="img/LogoTiktok.png" alt="TikTok"></a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa"><img src="img/LogoLinkedin.png" alt="LinkedIn"></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="legal-links">
-                    <a href="politica-privacidad.html">Política de Privacidad</a> | 
-                    <a href="aviso-legal.html">Aviso Legal</a> 
-                </div>
-                <p class="copyright">© <span id="current-year"></span> Aluminios Jutosa - Marcos Toribio. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
     <div id="lightbox-modal" class="lightbox">
         <span class="lightbox-cerrar">&times;</span>
@@ -255,8 +215,9 @@
             document.getElementById("current-year").textContent = new Date().getFullYear();
         }
 
-        // Lógica del Carrusel Hero (Debe estar envuelta en DOMContentLoaded si no lo está ya en main.js)
+        // Lógica del Carrusel Hero y Testimonios (DEBE ESTAR DENTRO DE DOMContentLoaded)
         document.addEventListener('DOMContentLoaded', function() {
+            // HERO SLIDER
             const heroSlider = document.querySelector('.hero-slider');
             if (heroSlider) {
                 const heroSlides = heroSlider.querySelectorAll('.slide');
@@ -313,7 +274,7 @@
                 }
 
                 if (heroSlides.length > 0) {
-                    if(heroSlides[0]) heroSlides[0].classList.add('active'); // Activa el primer slide
+                    if(heroSlides[0]) heroSlides[0].classList.add('active');
                     createHeroDots(); 
                     updateHeroDots(); 
 
@@ -325,7 +286,7 @@
                 }
             }
 
-            // Lógica para el Carrusel de Testimonios (Actualizada para mostrar 1 a la vez y 10s)
+            // TESTIMONIAL SLIDER
             const testimonialSliderEl = document.querySelector('.testimonial-slider-container');
             if (testimonialSliderEl) {
                 const slidesContainer = testimonialSliderEl.querySelector('.testimonial-slides');
@@ -334,64 +295,52 @@
                 const nextBtn = testimonialSliderEl.querySelector('.testimonial-next');
                 let currentIndex = 0;
                 let testimonialAutoPlayInterval;
+                const numCards = cards.length;
 
                 function setupTestimonialSlider() {
-                    if (cards.length === 0) return;
-                    const containerVisibleWidth = testimonialSliderEl.offsetWidth - (parseInt(getComputedStyle(testimonialSliderEl).paddingLeft) + parseInt(getComputedStyle(testimonialSliderEl).paddingRight));
-                    
-                    slidesContainer.style.width = `${cards.length * 100}%`; // Ancho total para todos los slides basado en el contenedor visible
+                    if (numCards === 0) return;
+                    slidesContainer.style.width = `${numCards * 100}%`;
                     cards.forEach(card => {
-                        // Cada tarjeta debe ocupar el 100% del ANCHO VISIBLE del carrusel
-                        card.style.flex = `0 0 ${100 / cards.length}%`; // Esto es para el ancho dentro del contenedor .testimonial-slides
-                        card.style.boxSizing = 'border-box';
-                        // Para que cada tarjeta individualmente sea el ancho del contenedor visible:
-                        // card.style.width = `${containerVisibleWidth}px`; // Esto no es correcto si están en un flex container que se traslada
-                    });
-                }
-
-                function showCurrentTestimonial() {
-                    if (cards.length === 0) return;
-                    // Mueve el contenedor de slides. Cada slide individual (testimonio-card)
-                    // debe tener un width tal que solo uno sea visible.
-                    // Si testimonial-slider-container tiene overflow:hidden y un ancho fijo (max-width: 650px),
-                    // y cada testimonio-card tiene width: 100% (de ese contenedor visible),
-                    // entonces el translateX debe ser -currentIndex * 100%.
-                    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-                
-                if (cards.length > 0) { // Esta parte se ejecuta una vez para configurar anchos
-                    slidesContainer.style.width = `${cards.length * 100}%`; // Contenedor de slides es N veces el ancho visible
-                    cards.forEach(card => {
-                        card.style.width = `${100 / cards.length}%`; // Cada card es una fracción del total de .testimonial-slides
+                        card.style.width = `${100 / numCards}%`;
                         card.style.flexShrink = '0';
                         card.style.boxSizing = 'border-box';
                     });
                 }
 
+                function showCurrentTestimonial() {
+                    if (numCards === 0) return;
+                    const offsetPercentage = currentIndex * (100 / numCards);
+                    slidesContainer.style.transform = `translateX(-${offsetPercentage}%)`;
+                }
+                
                 function nextTestimonialSlide() {
-                    currentIndex = (currentIndex + 1) % cards.length;
+                    currentIndex = (currentIndex + 1) % numCards;
                     showCurrentTestimonial();
                 }
                 
                 function prevTestimonialSlide() {
-                    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                    currentIndex = (currentIndex - 1 + numCards) % numCards;
                     showCurrentTestimonial();
                 }
 
                 function startTestimonialAutoPlay() {
-                    if (cards.length <= 1) return;
+                    if (numCards <= 1) {
+                        if(prevBtn) prevBtn.style.display = 'none';
+                        if(nextBtn) nextBtn.style.display = 'none';
+                        return;
+                    }
                     testimonialAutoPlayInterval = setInterval(nextTestimonialSlide, 10000); // 10 SEGUNDOS
                 }
 
                 function resetTestimonialAutoPlay() {
-                    if (cards.length <= 1) return;
+                    if (numCards <= 1) return;
                     clearInterval(testimonialAutoPlayInterval);
                     startTestimonialAutoPlay();
                 }
 
-                if (cards.length > 0) {
-                    // setupTestimonialSlider(); // Ya no es necesaria esta llamada si se configuran los anchos de cards aquí
-                    showCurrentTestimonial(); // Posiciona inicialmente
+                if (numCards > 0) {
+                    setupTestimonialSlider();
+                    showCurrentTestimonial();
                     
                     if (prevBtn && nextBtn) {
                         prevBtn.addEventListener('click', () => {
@@ -402,14 +351,19 @@
                             nextTestimonialSlide();
                             resetTestimonialAutoPlay();
                         });
+                    } else {
+                        // console.warn("Botones de testimonios no encontrados");
                     }
                     startTestimonialAutoPlay();
+                } else {
+                    if(prevBtn) prevBtn.style.display = 'none';
+                    if(nextBtn) nextBtn.style.display = 'none';
                 }
             }
 
-            // Lógica del Lightbox (Global, debería estar en main.js idealmente)
+            // LIGHTBOX (Global, si está en main.js, esto puede ser redundante o ajustarse)
             const localLightboxModal = document.getElementById('lightbox-modal');
-            if(localLightboxModal) { // Solo ejecutar si el modal existe en la página
+            if(localLightboxModal) {
                 const localLightboxImage = document.getElementById('lightbox-imagen');
                 const localLightboxCaption = document.getElementById('lightbox-caption');
                 const localCloseLightboxButton = localLightboxModal.querySelector('.lightbox-cerrar'); 
