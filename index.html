@@ -63,8 +63,7 @@
         <div class="slider-dots"></div>
     </section>
 
-    <main class="main-content-wrapper">
-        <div class="container"> 
+    <main class="main-content-wrapper"> <div class="container"> 
             <section class="bienvenida-resumen text-center page-section">
                 <div class="bienvenida-content">
                     <h2>Bienvenidos a Aluminios Jutosa</h2>
@@ -200,7 +199,48 @@
     </main>
 
     <footer>
-        </footer>
+        <div class="container">
+            <div class="footer-content-wrapper">
+                <div class="footer-column" id="footer-tienda">
+                    <h4><i class="fas fa-store icon"></i> Tienda y Exposición</h4>
+                    <p>C/ Mª Cristina 8, Post.<br>28982 Parla (Madrid)</p>
+                    <p><i class="fas fa-phone icon"></i> <a href="tel:+34916985250">91 698 52 50</a></p>
+                    <p><i class="fas fa-mobile-alt icon"></i> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a></p>
+                    <p><i class="fas fa-envelope icon"></i> <a href="mailto:info@aluminiosjutosa.com">info@aluminiosjutosa.com</a></p>
+                    <p><i class="fas fa-clock icon"></i> Horario Tienda:<br>L-V: 9:00-14:00 y 17:00-20:00<br>
+                    (Sábados: contactar previamente)</p>
+                </div>
+
+                <div class="footer-column" id="footer-fabrica">
+                    <h4><i class="fas fa-industry icon"></i> Fábrica</h4>
+                    <p>C/ Agustín de Betancourt, 30<br>28984 Parla (Madrid)</p>
+                    <p><i class="fas fa-phone icon"></i> <a href="tel:+34916644432">91 664 44 32</a></p>
+                    <p><i class="fas fa-mobile-alt icon"></i> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a> (Móviles compartidos)</p>
+                    <p><i class="fas fa-envelope icon"></i> <a href="mailto:info@aluminiosjutosa.com">info@aluminiosjutosa.com</a></p>
+                    <p><i class="fas fa-clock icon"></i> Horario Fábrica:<br>L-J: 8:00-14:00 y 15:30-19:30<br>
+                    (Viernes: consultar/cita previa)</p>
+                </div>
+
+                <div class="footer-column" id="footer-social">
+                    <h4><i class="fas fa-share-alt icon"></i> Síguenos</h4>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jutosa"><img src="img/LogoInstagram.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/people/Aluminios-Jutosa/100077347466519/?locale=fo_FO" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jutosa"><img src="img/LogoFacebook.png" alt="Facebook"></a>
+                        <a href="https://www.tiktok.com/@aluminiosjutosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Jutosa"><img src="img/LogoTiktok.png" alt="TikTok"></a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jutosa"><img src="img/LogoLinkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="politica-privacidad.html">Política de Privacidad</a> | 
+                    <a href="aviso-legal.html">Aviso Legal</a> 
+                </div>
+                <p class="copyright">© <span id="current-year"></span> Aluminios Jutosa - Marcos Toribio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
     <div id="lightbox-modal" class="lightbox">
         <span class="lightbox-cerrar">&times;</span>
@@ -215,7 +255,6 @@
             document.getElementById("current-year").textContent = new Date().getFullYear();
         }
 
-        // Lógica del Carrusel Hero y Testimonios (DEBE ESTAR DENTRO DE DOMContentLoaded)
         document.addEventListener('DOMContentLoaded', function() {
             // HERO SLIDER
             const heroSlider = document.querySelector('.hero-slider');
@@ -299,18 +338,22 @@
 
                 function setupTestimonialSlider() {
                     if (numCards === 0) return;
+                    // Contenedor de slides (el que se mueve) debe ser N * 100% del ancho del viewport del slider
                     slidesContainer.style.width = `${numCards * 100}%`;
+                    // Cada tarjeta ocupa 1/N del ancho del contenedor de slides,
+                    // lo que equivale al 100% del ancho del viewport del slider.
                     cards.forEach(card => {
                         card.style.width = `${100 / numCards}%`;
-                        card.style.flexShrink = '0';
+                        card.style.flexShrink = '0'; // Muy importante para que no se encojan
                         card.style.boxSizing = 'border-box';
                     });
                 }
 
                 function showCurrentTestimonial() {
                     if (numCards === 0) return;
-                    const offsetPercentage = currentIndex * (100 / numCards);
-                    slidesContainer.style.transform = `translateX(-${offsetPercentage}%)`;
+                    // El desplazamiento es el índice actual por el porcentaje que representa un slide
+                    const percentageOffset = currentIndex * (100 / numCards);
+                    slidesContainer.style.transform = `translateX(-${percentageOffset}%)`;
                 }
                 
                 function nextTestimonialSlide() {
@@ -324,7 +367,7 @@
                 }
 
                 function startTestimonialAutoPlay() {
-                    if (numCards <= 1) {
+                    if (numCards <= 1) { // No autoplay ni botones si hay solo 1 o 0 testimonios
                         if(prevBtn) prevBtn.style.display = 'none';
                         if(nextBtn) nextBtn.style.display = 'none';
                         return;
@@ -339,8 +382,8 @@
                 }
 
                 if (numCards > 0) {
-                    setupTestimonialSlider();
-                    showCurrentTestimonial();
+                    setupTestimonialSlider(); 
+                    showCurrentTestimonial(); 
                     
                     if (prevBtn && nextBtn) {
                         prevBtn.addEventListener('click', () => {
@@ -361,7 +404,7 @@
                 }
             }
 
-            // LIGHTBOX (Global, si está en main.js, esto puede ser redundante o ajustarse)
+            // LIGHTBOX
             const localLightboxModal = document.getElementById('lightbox-modal');
             if(localLightboxModal) {
                 const localLightboxImage = document.getElementById('lightbox-imagen');

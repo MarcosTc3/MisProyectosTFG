@@ -42,21 +42,21 @@
 /* Wrapper para el contenido después del hero full-viewport */
 .main-content-wrapper {
     position: relative; 
-    /* z-index: 2; No debería ser necesario si el hero está en el flujo o con z-index menor que header */
     background-color: #fff;
+    /* El padding-top para separar del header ya no es necesario aquí,
+       la primera sección dentro (bienvenida-resumen) tendrá su propio margen. */
 }
 
 
 /* 1. Hero Slider Full Viewport */
 .hero-slider.full-viewport-hero {
-    position: relative; /* Mantenido en relative para que empuje el contenido si es necesario */
+    position: relative; /* Mantenido en relative para que el flujo del documento siga */
     width: 100%;
     height: 100vh; /* OCUPA TODA LA ALTURA DEL VIEWPORT */
     overflow: hidden;
     background-color: #222; 
-    margin-top: 0 !important; /* Asegurar que se pega al header */
+    margin-top: 0 !important; /* Asegurar que se pega al header si este es sticky */
     padding-top: 0 !important;
-    /* z-index: 1;  Es mejor que el header tenga un z-index alto (ej. 1000) y este no, o uno bajo. */
 }
 .hero-slider.full-viewport-hero .slide {
     display: none;
@@ -66,12 +66,12 @@
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out; /* Solo fade por simplicidad y rendimiento */
+    transition: opacity 1s ease-in-out;
 }
 .hero-slider.full-viewport-hero .slide.active {
     display: block;
     opacity: 1;
-    z-index: 1; 
+    z-index: 1; /* Para el slide activo */
 }
 .hero-slider.full-viewport-hero .slide img {
     width: 100%;
@@ -166,7 +166,10 @@
     position: relative;
     color: #fff; 
     border-radius: 8px;
-    margin-top: 50px; /* <<<< SEPARACIÓN DEL CARRUSEL HERO */
+    margin-top: 50px; /* <<<< SEPARACIÓN DEL CARRUSEL HERO (si el carrusel no es position:absolute) */
+    /* Si el carrusel es position:absolute, .main-content-wrapper necesitaría margin-top: 100vh;
+       y este .bienvenida-resumen no necesitaría margin-top.
+       Dado que he puesto .hero-slider como relative, este margin-top es para la separación. */
 }
 .bienvenida-resumen::before { 
     content: "";
@@ -224,7 +227,7 @@
 
 /* 4. Proyectos Destacados */
 .proyectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-@media (min-width: 992px) { .proyectos-grid { grid-template-columns: repeat(3, 1fr); } } /* 3x2 en desktop */
+@media (min-width: 992px) { .proyectos-grid { grid-template-columns: repeat(3, 1fr); } }
 .proyecto-item img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, opacity 0.3s ease; cursor: pointer; }
 .proyecto-item img:hover { transform: scale(1.03); opacity: 0.85; }
 
@@ -248,8 +251,8 @@
     border-radius: 8px;
     border-left: 5px solid #50C9F2; 
     box-sizing: border-box;
-    flex-shrink: 0; 
-    /* width: 100%; Es importante que el JS maneje esto para el efecto 1 a la vez */
+    flex-shrink: 0; /* Importante para que no se encojan los slides */
+    /* El JS ajustará el width de cada card (ej. width: 100% del contenedor visible) */
 }
 .testimonio-rating { color: #FFD700; margin-bottom: 10px; font-size: 1.1em; text-align: center; }
 .testimonio-card .testimonio-texto { font-style: italic; color: #444; line-height: 1.65; margin-bottom: 15px; position: relative; padding-left: 30px; }
