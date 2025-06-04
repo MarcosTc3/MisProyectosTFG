@@ -67,7 +67,7 @@
                         <p>Detrás de cada proyecto de Aluminios Jutosa hay un equipo de profesionales altamente cualificados y apasionados por su trabajo. Nuestra verdadera fortaleza reside en la unidad, la experiencia acumulada y el cuidado que ponemos en cada detalle. ¡Estamos aquí para asesorarte y hacer realidad tus ideas!</p>
                     </div>
                     <div class="equipo-foto-qs">
-                        <img src="img/NuestrosTrabajadores.png" alt="Equipo de Aluminios Jutosa" class="image-lightboxable">
+                        <img src="img/NuestrosTrabajadores.png" alt="Equipo de Aluminios Jutosa" class="image-lightboxable" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -109,7 +109,7 @@
                 
                 <div class="evolucion-subsection">
                     <h3>Crecimiento de Nuestras Instalaciones (Naves)</h3>
-                     <p class="text-center-italic">No disponemos de fotografía de la segunda nave que tuvimos en Illescas, pero aquí puedes ver la evolución de nuestras principales instalaciones en Parla.</p>
+                     <p class="text-center-italic">A lo largo de los años, hemos crecido y adaptado nuestras instalaciones para ofrecerte el mejor servicio. Aquí puedes ver la evolución de nuestras principales naves en Parla.</p>
                     <div class="image-evolution-strip">
                         <div class="evolution-item">
                             <img src="img/primera-nave/primera-nave-jefes.jpg" alt="Primera nave de Aluminios Jutosa en Parla con los fundadores" class="image-lightboxable" loading="lazy">
@@ -120,7 +120,10 @@
                             <p>2. Antigua nave en el polígono de Parla</p>
                         </div>
                         <div class="evolution-item">
-                            <img src="img/nueva-nave/nave-nueva-vista-frontal-fuera.jpg" alt="Fachada de la nueva y actual nave de Aluminios Jutosa en Parla" class="image-lightboxable" loading="lazy">
+                            <img src="img/nueva-nave/nave-nueva-vista-frontal-fuera.jpg" 
+                                 alt="Fachada de la nueva y actual nave de Jutosa en Parla" 
+                                 class="image-lightboxable" 
+                                 id="nave-actual-gallery-trigger" loading="lazy">
                             <p>3. Nuestra moderna nave actual en Parla</p>
                         </div>
                     </div>
@@ -156,8 +159,12 @@
 
     <div id="lightbox-modal" class="lightbox">
         <span class="lightbox-cerrar">&times;</span>
-        <img class="lightbox-contenido" id="lightbox-imagen" alt="Imagen ampliada del proyecto">
-        <div id="lightbox-caption"></div>
+        <a class="lightbox-prev" id="lightbox-prev-btn">&#10094;</a>
+        <a class="lightbox-next" id="lightbox-next-btn">&#10095;</a>
+        <div class="lightbox-image-container">
+            <img class="lightbox-contenido" id="lightbox-imagen" alt="Imagen ampliada del proyecto">
+            <div id="lightbox-caption"></div>
+        </div>
     </div>
 
     <footer>
@@ -198,7 +205,7 @@
                 <div class="legal-links">
                     <a href="politica-privacidad.html">Política de Privacidad</a> | 
                     <a href="aviso-legal.html">Aviso Legal</a> 
-                    </div>
+                </div>
                 <p class="copyright">© <span id="current-year"></span> Aluminios Jutosa - Marcos Toribio. Todos los derechos reservados.</p>
             </div>
         </div>
@@ -210,41 +217,6 @@
         if (document.getElementById("current-year")) {
             document.getElementById("current-year").textContent = new Date().getFullYear();
         }
-
-        // Lógica para el Lightbox en esta página
-        document.addEventListener('DOMContentLoaded', function() {
-            const lightboxModal = document.getElementById('lightbox-modal');
-            const lightboxImage = document.getElementById('lightbox-imagen');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            const closeLightboxButton = document.querySelector('.lightbox .lightbox-cerrar');
-            const imagesToLightbox = document.querySelectorAll('.image-lightboxable'); 
-
-            if (lightboxModal && lightboxImage && closeLightboxButton && imagesToLightbox.length > 0) {
-                imagesToLightbox.forEach(image => {
-                    image.style.cursor = 'pointer'; 
-                    image.addEventListener('click', function() {
-                        lightboxModal.style.display = 'block';
-                        lightboxImage.src = this.src;
-                        lightboxCaption.innerHTML = this.alt;
-                        document.body.style.overflow = 'hidden'; 
-                    });
-                });
-
-                if(closeLightboxButton) {
-                    closeLightboxButton.addEventListener('click', function() {
-                        lightboxModal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    });
-                }
-
-                lightboxModal.addEventListener('click', function(event) {
-                    if (event.target === lightboxModal) { 
-                        lightboxModal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            }
-        });
     </script>
 </body>
 </html>

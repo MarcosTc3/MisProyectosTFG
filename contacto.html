@@ -6,11 +6,12 @@
     <title>Contacto - Aluminios Jutosa</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo"><a href="index.html"><img src="img/NuevoLogoJutosa.png" alt="Logo Aluminios Jutosa" id="logo-img"></a></div>
+            <div class="logo"><a href="index.html"><img src="img/NuevoLogojutosa.png" alt="Logo Aluminios Jutosa" id="logo-img"></a></div>
             <nav id="main-nav">
                 <button class="hamburger" id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-list"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
                 <ul id="menu-list">
@@ -18,7 +19,8 @@
                     <li><a href="quienes-somos.html" class="nav-link">Quiénes Somos</a></li>
                     <li><a href="productos-servicios.html" class="nav-link">Productos y Servicios</a></li>
                     <li><a href="nuestros-trabajos.html" class="nav-link">Nuestros Trabajos</a></li>
-                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li> </ul>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -49,19 +51,18 @@
                         <h3><span class="icon">🏭</span> Fábrica</h3>
                         <p><strong>Dirección:</strong> C/ Agustín de Betancourt, 30, 28984 Parla (Madrid)</p>
                         <p><strong>Teléfono Fijo:</strong> <a href="tel:+34916644432">91 664 44 32</a></p>
-                        <p><strong>Móviles:</strong> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a></p>
+                        <p><strong>Móviles:</strong> <a href="tel:+34615943658">615 94 36 58</a> / <a href="tel:+34653662418">653 66 24 18</a> (Móviles compartidos)</p>
                         <p><strong>Email:</strong> <a href="mailto:info@aluminiosjutosa.com">info@aluminiosjutosa.com</a></p>
                         <p><strong>Horario Fábrica:</strong> Lunes-Jueves 8:00 – 14:00 y 15:30 – 19:30<br>
-                        (Para consultas sobre la fábrica los viernes, por favor contactar previamente)</p>
+                        (Viernes: consultar/cita previa)</p>
                         <div class="map-placeholder" id="map-fabrica">
-                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6090.673422617069!2d-3.7901348235788737!3d40.246047666009325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41f4d4c3951f4d%3A0x2206f8f674b968ca!2sAluminios%20Jutosa!5e0!3m2!1ses!2ses!4v1747391536876!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6090.673422617069!2d-3.7901348235788737!3d40.246047666009325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41f4d4c3951f4d%3A0x2206f8f674b968ca!2sAluminios%20Jutosa!5e0!3m2!1ses!2ses!4v1747391536876!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="contact-form-section">
-                <h2 id="solicita-presupuesto">Envíanos un Mensaje Directo</h2>
+            <section class="contact-form-section" id="solicita-presupuesto"> <h2>Envíanos un Mensaje Directo</h2>
                 <form id="contactForm" action="https://formsubmit.co/marcos.toribio@campusfp.es" method="POST">
                     <div class="form-group">
                         <label for="nombre">Nombre Completo <span class="required">*</span></label>
@@ -96,14 +97,17 @@
                         <label for="mensaje">Mensaje <span class="required">*</span></label>
                         <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Escribe aquí tu consulta detallada..."></textarea>
                     </div>
-
                     <input type="hidden" name="_subject" value="¡Nuevo Mensaje desde la Web de Aluminios Jutosa!">
-                    
-                    <input type="text" name="_honey" style="display:none"> <div class="form-group privacy-check">
+                    <input type="text" name="_honey" style="display:none">
+                     <div class="form-group privacy-check">
                         <input type="checkbox" id="privacy" name="privacy" value="accepted" required>
                         <label for="privacy" class="privacy-label">He leído y acepto la <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a> <span class="required">*</span></label>
                     </div>
                     <button type="submit" class="btn btn-primario">Enviar Mensaje</button>
+                    
+                    <p class="demo-thankyou-link">
+                        <a href="gracias.html" target="_blank">(Ver página de agradecimiento de ejemplo)</a>
+                    </p>
                 </form>
             </section>
         </div>
@@ -121,7 +125,6 @@
                     <p><i class="fas fa-clock icon"></i> Horario Tienda:<br>L-V: 9:00-14:00 y 17:00-20:00<br>
                     (Sábados: contactar previamente)</p>
                 </div>
-
                 <div class="footer-column" id="footer-fabrica">
                     <h4><i class="fas fa-industry icon"></i> Fábrica</h4>
                     <p>C/ Agustín de Betancourt, 30<br>28984 Parla (Madrid)</p>
@@ -131,7 +134,6 @@
                     <p><i class="fas fa-clock icon"></i> Horario Fábrica:<br>L-J: 8:00-14:00 y 15:30-19:30<br>
                     (Viernes: consultar/cita previa)</p>
                 </div>
-
                 <div class="footer-column" id="footer-social">
                     <h4><i class="fas fa-share-alt icon"></i> Síguenos</h4>
                     <div class="social-media">
@@ -142,17 +144,22 @@
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <div class="legal-links">
                     <a href="politica-privacidad.html">Política de Privacidad</a> | 
                     <a href="aviso-legal.html">Aviso Legal</a> 
-                    </div>
+                </div>
                 <p class="copyright">© <span id="current-year"></span> Aluminios Jutosa - Marcos Toribio. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-cerrar">&times;</span>
+        <img class="lightbox-contenido" id="lightbox-imagen" alt="Imagen ampliada">
+        <div id="lightbox-caption"></div>
+    </div>
+    
     <script src="js/main.js"></script>
     <script>
         if (document.getElementById("current-year")) {

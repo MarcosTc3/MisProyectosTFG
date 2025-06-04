@@ -1,0 +1,112 @@
+/* css/gracias.css */
+
+body { /* Para asegurar que el footer se pegue abajo si el contenido es corto */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.gracias-main {
+    flex-grow: 1; /* Hace que el main ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el .gracias-container */
+    align-items: center; /* Centra horizontalmente el .gracias-container */
+    text-align: center;
+    padding: 40px 20px; /* Padding para la sección principal */
+    background-color: #f4f7f9; /* Un fondo suave para la página */
+}
+
+.gracias-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Sombra más pronunciada */
+    max-width: 650px; /* Ancho máximo del contenedor de agradecimiento */
+    width: 100%;
+    border-top: 5px solid #1E73BE; /* Detalle de color superior */
+}
+
+.gracias-icon {
+    font-size: 4.5em; /* Icono más grande */
+    color: #28a745; /* Color verde para el icono de éxito */
+    margin-bottom: 25px;
+    line-height: 1;
+}
+
+.gracias-container h1 {
+    color: #1E73BE; /* Tu azul principal */
+    font-size: 2.6em; /* Título más grande */
+    margin-bottom: 15px;
+}
+
+.gracias-container p {
+    font-size: 1.1em;
+    color: #333; /* Texto principal más oscuro */
+    line-height: 1.75; /* Mayor interlineado */
+    margin-bottom: 20px;
+}
+.gracias-container p:last-of-type { /* El último párrafo antes de los botones */
+     margin-bottom: 30px;
+}
+
+
+.gracias-actions {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap; /* Para que los botones se apilen en móvil si es necesario */
+    justify-content: center;
+    gap: 15px; /* Espacio entre botones */
+}
+
+/* Los estilos de .btn, .btn-primario, .btn-secundario vienen de style.css */
+/* Puedes añadir overrides aquí si quieres que los botones se vean diferentes en esta página */
+.gracias-actions .btn {
+    padding: 12px 28px; /* Ajusta el padding si es necesario */
+    font-size: 1em;
+}
+.gracias-actions .btn i {
+    margin-right: 8px; /* Espacio para el icono del botón */
+}
+
+
+/* Media queries para la página de gracias */
+@media (max-width: 768px) {
+    .gracias-container h1 {
+        font-size: 2.2em;
+    }
+    .gracias-container p {
+        font-size: 1.05em;
+    }
+    .gracias-icon {
+        font-size: 4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .gracias-main {
+        padding: 30px 15px;
+    }
+    .gracias-container {
+        padding: 30px 20px;
+    }
+    .gracias-container h1 {
+        font-size: 1.9em;
+    }
+    .gracias-container p {
+        font-size: 1em;
+    }
+    .gracias-icon {
+        font-size: 3.5em;
+    }
+    .gracias-actions .btn { /* Botones ocupan todo el ancho y se apilan */
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .gracias-actions .btn:last-child {
+        margin-bottom: 0;
+    }
+    .gracias-actions {
+        flex-direction: column;
+    }
+}
